@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-base text-gray-700;
+    /* Esto crea un degradado sutil fijo de fondo */
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(186, 123, 124, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(200, 142, 131, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(215, 169, 169, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(229, 197, 197, 0.15) 0px, transparent 50%);
+    background-attachment: fixed; /* El fondo se queda quieto al scrollear */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Clase de utilidad para crear paneles de vidrio rápido */
+@layer components {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-md border border-white/40 shadow-xl rounded-3xl;
+  }
+  
+  .glass-button {
+    @apply bg-brand-primary text-white shadow-lg hover:bg-brand-primary/90 transition-all active:scale-95;
+  }
+}
