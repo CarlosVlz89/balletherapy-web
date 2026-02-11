@@ -68,7 +68,6 @@ const Footer = () => {
 
           <div className="border-t border-brand-base/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60 font-light">
             <p>© {new Date().getFullYear()} Balletherapy. Todos los derechos reservados.</p>
-            <p>Diseñado con ♥</p>
           </div>
         </div>
       </footer>
