@@ -41,7 +41,7 @@ const Navbar = () => {
               Balletherapy
             </h1>
             <span className={`text-[0.5rem] tracking-[0.2em] text-brand-medium uppercase text-center transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 mt-1'}`}>
-              Cuerpo • Mente • Alma
+              wellness studio
             </span>
           </div>
 
