@@ -8,13 +8,13 @@ const pillars = [
     icon: <BookOpen className="w-6 h-6 text-white" />,
     description: "No es solo escribir. Es procesar el estrés.",
     details: [
-      "Separas 'lo que quieres' de 'lo que esperan de ti'.",
-      "Sacas el ruido mental al papel antes de moverte."
+      "Escribir a mano nos quita el peso de la angustia o lo que duele.",
+      "Observamos el ruido mental lo aterrizamos y llegamos a la calma con más claridad."
     ],
     color: "bg-brand-primary"
   },
   {
-    title: "Movimiento Consciente",
+    title: "Barre",
     icon: <Activity className="w-6 h-6 text-white" />,
     description: "No buscamos la pose perfecta, sino sentir tu centro.",
     details: [
@@ -38,21 +38,21 @@ const pillars = [
 const Differentiators = () => {
   return (
     <section id="metodo" className="py-24 px-6 relative overflow-hidden scroll-mt-20">
-      
+
       {/* Fondo decorativo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <span className="text-brand-medium font-bold tracking-wider uppercase text-sm mb-4 block">
             La Diferencia Estructural
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-brand-primary mb-6">
-            Más que ejercicio, una <span className="italic text-brand-medium">reconciliación</span>.
+            Más que ejercicio, un <span className="italic text-brand-medium">hábito</span> que te sostiene.
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed font-light">
-            A diferencia del Yoga o Pilates tradicionales, aquí no buscamos flexibilidad extrema ni fuerza bruta.
+            A diferencia del Yoga o Pilates (igualmente valiosos), aquí no buscamos flexibilidad extrema ni fuerza bruta.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ const Differentiators = () => {
                 <p className="text-gray-700 font-medium mb-6">
                   {pillar.description}
                 </p>
-                
+
                 <ul className="space-y-4">
                   {pillar.details.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-gray-500">
@@ -94,7 +94,7 @@ const Differentiators = () => {
         </div>
 
         {/* Sección "No es para ti si..." (Estilo Vidrio Oscuro/Saturado) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -103,17 +103,17 @@ const Differentiators = () => {
           <div className="space-y-4 max-w-xl">
             <h3 className="text-2xl font-serif text-brand-base">Tu espacio seguro</h3>
             <p className="text-brand-base/90 font-light">
-              Aquí no hay espejos que reflejen juicios, ni correcciones públicas que humillen. Es un lugar para mujeres que entienden tu carga.
+              Aquí no hay juicios ni la obligación de hacer cada movimiento perfecto. Es un lugar para mujeres que entienden tu carga.
             </p>
           </div>
           <div className="flex flex-col gap-3 min-w-[200px]">
             <div className="flex items-center gap-2 text-brand-base">
               <XCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">Sin espejos</span>
+              <span className="text-sm font-medium">Sin comparaciones</span>
             </div>
             <div className="flex items-center gap-2 text-brand-base">
               <XCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">Sin jerarquías</span>
+              <span className="text-sm font-medium">Sin prisa</span>
             </div>
           </div>
         </motion.div>

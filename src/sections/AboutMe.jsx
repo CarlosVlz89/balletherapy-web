@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
-import eliImage from '../assets/eli-about.jpg'; 
+import eliImage from '../assets/eli-about.jpg';
 
 const AboutMe = () => {
   return (
     <section id="sobre-mi" className="py-24 px-6 relative overflow-hidden scroll-mt-20">
-      
+
       {/* Fondo Blob decorativo */}
       <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-brand-light/20 rounded-full blur-[80px] -z-10 translate-x-1/3"></div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        
+
         {/* Columna de Imagen */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -22,9 +22,9 @@ const AboutMe = () => {
         >
           <div className="aspect-[4/5] rounded-2xl overflow-hidden relative shadow-2xl">
             {/* CORRECCIÓN 1: Quitamos 'grayscale' para que siempre esté a color */}
-            <img 
-              src={eliImage} 
-              alt="Eli, fundadora de Balletherapy" 
+            <img
+              src={eliImage}
+              alt="Eli, fundadora de Balletherapy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             {/* Un brillo sutil encima para integrarla */}
@@ -55,19 +55,19 @@ const AboutMe = () => {
             </h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-gray-600 space-y-6 leading-relaxed text-lg font-light"
           >
             <p>
-              Mi camino no fue el de la bailarina prodigio. Comencé tarde, a los 17 años, y fui rechazada múltiples veces por tener una "espalda rígida".
+              Mi camino en el ballet no fue el más fácil, a los 16 años me presenté a las pruebas de una escuela profesional de ballet. No una, sino dos veces. Se necesitaba un cuerpo con condiciones anatómicas y una edad más temprana. Y si, pese a no ser admitida la primera vez, yo sabía que iba a encontrar la manera de estudiar lo que tanto quería.
             </p>
             <p>
-              Me obligué a trabajar mi cuerpo de forma analítica. Pero el esfuerzo tuvo un costo: <strong className="text-brand-primary font-medium">dos caídas graves y una hernia discal</strong> diagnosticada en Cuba.
+              Eso si, al principio el cuerpo me pasó factura. Tuve <strong className="text-brand-primary font-medium">dos caídas fuertes y una hernia discal</strong> Fue un momento duro, pero también un antes y un después. Me obligó a frenar y a escucharme. Comencé a trabajar desde la calma, más analítica y honrando a mi cuerpo. El resultado, una evolución en mi técnica, en mi cuerpo y en mi vida.
             </p>
-            
+
             {/* Caja destacada */}
             <div className="bg-white/60 backdrop-blur-sm p-6 border-l-2 border-brand-primary rounded-r-xl">
               <p className="italic text-gray-700 font-normal">

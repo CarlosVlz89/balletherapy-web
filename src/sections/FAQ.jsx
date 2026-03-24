@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "¿Cómo funcionan los pagos?",
-    answer: "Pagas por clase individual. Sin mensualidades forzosas. Una vez realizado el pago, recibes el link de Zoom."
+    answer: "Puedes realizar tu pago por sesión o por combos. Una vez realizado el pago, recibes el link de Zoom"
   },
   {
     question: "¿Qué pasa si no puedo conectarme en vivo?",
@@ -31,7 +31,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-24 px-6 relative scroll-mt-20">
       <div className="max-w-3xl mx-auto relative z-10">
-        
+
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary mb-4 border border-brand-primary/20">
             <HelpCircle className="w-6 h-6" />
@@ -83,9 +83,9 @@ const FAQ = () => {
 
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6 font-light">¿Tienes alguna otra pregunta?</p>
-          <a 
-            href="https://wa.me/525539134996" 
-            target="_blank" 
+          <a
+            href="https://wa.me/525539134996"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-brand-primary font-medium hover:text-brand-medium transition-colors border-b border-brand-primary/30 hover:border-brand-medium"
           >

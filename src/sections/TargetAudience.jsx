@@ -38,15 +38,15 @@ const personas = [
 const TargetAudience = () => {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      
+
       {/* Elementos decorativos de fondo (Blobs) para resaltar el vidrio */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl -translate-x-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-medium/10 rounded-full blur-3xl translate-x-1/4"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         <div className="text-center mb-16 space-y-4">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -55,7 +55,7 @@ const TargetAudience = () => {
             ¿Te sientes identificada?
           </motion.h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Balletherapy es un refugio para mujeres reales.
+            Balletherapy es un espacio para mujeres reales.
           </p>
         </div>
 
@@ -73,15 +73,15 @@ const TargetAudience = () => {
               <div className="bg-white/50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm">
                 {persona.icon}
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-800 mb-3 text-center md:text-left">
                 {persona.title}
               </h3>
-              
+
               <p className="text-gray-600 mb-6 italic text-sm text-center md:text-left">
                 "{persona.description}"
               </p>
-              
+
               <ul className="space-y-3 mt-auto">
                 {persona.symptoms.map((symptom, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
