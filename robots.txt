@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://carlosvlz89.github.io/balletherapy-web/sitemap.xml
