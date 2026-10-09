@@ -8,31 +8,45 @@
   html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    color: #2A2421;
   }
   
   body {
-    @apply bg-brand-base text-gray-700;
-    /* Esto crea un degradado sutil fijo de fondo */
+    @apply bg-brand-base text-brand-text antialiased;
+    background-color: #FAF7F5;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(186, 123, 124, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(200, 142, 131, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(215, 169, 169, 0.15) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(229, 197, 197, 0.15) 0px, transparent 50%);
-    background-attachment: fixed; /* El fondo se queda quieto al scrollear */
+      radial-gradient(at 0% 0%, rgba(160, 82, 85, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(234, 223, 217, 0.2) 0px, transparent 50%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    color: #2A2421;
   }
 }
 
-/* Clase de utilidad para crear paneles de vidrio rápido */
 @layer components {
+  /* Paneles de vidrio cálido editorial: bg-white/85, borde lino fino y sombra sutil */
   .glass-panel {
-    @apply bg-white/40 backdrop-blur-md border border-white/40 shadow-xl rounded-3xl;
+    @apply bg-white/85 backdrop-blur-md border border-[#EADFD9] shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-3xl;
   }
   
+  /* Botón con respuesta háptica, área táctil mínima y halo lumínico en hover */
   .glass-button {
-    @apply bg-brand-primary text-white shadow-lg hover:bg-brand-primary/90 transition-all active:scale-95;
+    @apply bg-brand-primary text-white shadow-sm hover:bg-brand-secondary hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)] transition-all duration-300 active:scale-95 min-h-[44px] inline-flex items-center justify-center font-medium;
+  }
+}
+
+@layer utilities {
+  /* Ocultar barra de desplazamiento manteniendo desplazamiento táctil nativo */
+  .no-scrollbar::-webkit-scrollbar,
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar,
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
