@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-brand-dark text-brand-base pt-14 pb-24 md:pb-8 border-t border-brand-linen/20 relative overflow-hidden">
+      <footer className="bg-brand-dark text-brand-base pt-14 pb-32 md:pb-12 border-t border-brand-linen/20 relative overflow-hidden">
         {/* Halos sutiles de fondo */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-primary/10 rounded-full blur-[90px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-linen/5 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
@@ -59,8 +59,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Enlaces ("Explora") y "Contacto": sub-cuadrícula con ancho garantizado desde 360px */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
+            {/* Enlaces ("Explora") y "Contacto": 2 columnas paralelas asimétricas en móvil */}
+            <div className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-x-10 md:col-span-2">
               {/* Columna Explora */}
               <div>
                 <h4 className="font-serif text-brand-base mb-4 md:mb-6 text-base">Explora</h4>
@@ -82,7 +82,7 @@ const Footer = () => {
                     <li>
                       <a 
                         href="mailto:balletherapystudio@gmail.com" 
-                        className="text-xs sm:text-sm text-brand-muted hover:text-brand-base transition-colors inline-block break-normal sm:break-all"
+                        className="text-[0.72rem] sm:text-xs md:text-sm text-brand-muted hover:text-brand-base transition-colors whitespace-nowrap block"
                       >
                         balletherapystudio@gmail.com
                       </a>
