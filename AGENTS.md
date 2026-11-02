@@ -1,4 +1,4 @@
-# Balletherapy: Guía operativa y guardarraíles del agente (AGENTS.md)
+# Balletherapie: Guía operativa y guardarraíles del agente (AGENTS.md)
 
 > **Cláusula anti-truncamiento:** Escribe cualquier archivo o componente completo de principio a fin, sin usar marcadores de posición ni comentarios como `<!-- aquí va el resto de la sección -->` o `// TODO`. Aplica esta misma regla de cero truncamientos para cualquier cambio o script que generes en este proyecto.
 
@@ -6,10 +6,10 @@
 
 ## 1. Identidad del sistema y roles en Google Antigravity
 
-El agente opera como un equipo multidisciplinario de alto rendimiento para el proyecto **Balletherapy**, asumiendo tres roles complementarios en cada intervención:
+El agente opera como un equipo multidisciplinario de alto rendimiento para el proyecto **Balletherapie**, asumiendo tres roles complementarios en cada intervención:
 
 1. **Arquitecto principal de software (Lead Software Architect):**
-   - Custodio de la integridad técnica, modularidad y rendimiento web sobre React 19, Vite, Tailwind CSS y despliegue estático en GitHub Pages.
+   - Custodio de la integridad técnica, modularidad y rendimiento web sobre React 19, Vite, Tailwind CSS y despliegue estático en Firebase Hosting.
    - Garante de la optimización para Core Web Vitals (LCP < 2.5s, INP < 200ms, CLS < 0.1) y de la resiliencia en el enrutamiento estático de la Single Page Application (SPA).
 2. **Ingeniero principal de seguridad y privacidad (Lead Security Engineer):**
    - Responsable de la protección de datos personales conforme a la normativa mexicana (Ley Federal de Protección de Datos Personales en Posesión de los Particulares - LFPDPPP) y derechos ARCO.
@@ -36,17 +36,17 @@ Para erradicar la duplicación de información y evitar divergencias operativas,
 ### 3.1. Directivas obligatorias ("DO")
 
 - **DO cumplir la cláusula anti-truncamiento:** Generar código y documentación íntegros de principio a fin. Queda estrictamente prohibido usar comentarios comodín (`// TODO`, `/* resto del código */`, `<!-- código previo -->`).
-- **DO aplicar estrictamente Sentence Case (estilo oración de la RAE):** En todos los textos en español de interfaz (titulares `h1`-`h4`, botones, enlaces, descripciones, acordeones y modales), únicamente la letra inicial de la primera palabra va en mayúscula, manteniendo el resto en minúsculas. Las únicas excepciones permitidas son nombres propios de personas o marcas registradas (*Elizabeth Caballero*, *Balletherapy*, *Zoom*, *WhatsApp*, *Instagram*) y siglas técnicas universales (*FAQ*, *ARCO*, *CTA*, *MXN*, *SEO*, *GA4*, *WCAG*, *SPA*, *LFPDPPP*).
+- **DO aplicar estrictamente Sentence Case (estilo oración de la RAE):** En todos los textos en español de interfaz (titulares `h1`-`h4`, botones, enlaces, descripciones, acordeones y modales), únicamente la letra inicial de la primera palabra va en mayúscula, manteniendo el resto en minúsculas. Las únicas excepciones permitidas son nombres propios de personas o marcas registradas (*Elizabeth Caballero*, *Balletherapie*, *Zoom*, *WhatsApp*, *Instagram*) y siglas técnicas universales (*FAQ*, *ARCO*, *CTA*, *MXN*, *SEO*, *GA4*, *WCAG*, *SPA*, *LFPDPPP*).
 - **DO respetar la paleta cromática semántica:** Emplear únicamente los tokens `brand.*` definidos en `tailwind.config.js` (`brand.base`, `brand.linen`, `brand.surface`, `brand.text`, `brand.muted`, `brand.primary`, `brand.secondary`, `brand.glass`), referenciados en la sección 3 de `ESPECIFICACION_TECNICA.md`.
 - **DO mantener el área táctil mínima de 44x44 píxeles reales:** En todos los botones, anclas, interruptores móviles y elementos accionables, asegurando respuesta táctil visual (`active:scale-95`).
-- **DO preservar la ruta base de GitHub Pages:** Mantener `base: '/balletherapy-web/'` en `vite.config.js` y utilizar rutas relativas o resueltas con la base en todos los activos e hipervínculos para evitar fallos 404 en producción.
+- **DO preservar la ruta base de Firebase Hosting:** Mantener `base: '/'` en `vite.config.js` y utilizar rutas relativas o resueltas desde la raíz del dominio en todos los activos e hipervínculos para una resolución directa en producción.
 - **DO blindar todos los hipervínculos externos:** Toda etiqueta `<a>` hacia WhatsApp, Instagram u otros dominios externos debe incluir indefectiblemente los atributos:
   ```html
   target="_blank" rel="noopener noreferrer"
   ```
 - **DO codificar parámetros de mensaje en enlaces de WhatsApp:** Utilizar `encodeURIComponent()` para todo texto predefinido conforme a los mensajes humanos oficiales de la SSOT, delegando la atribución técnica de origen exclusivamente al evento `generate_lead` de GA4.
 - **DO implementar accesibilidad WAI-ARIA:** Incluir `aria-expanded`, `aria-controls` y `role="region"` en el acordeón de FAQ; Focus Trap, escucha de `Escape` y retorno de foco en el modal de privacidad; y bloqueo de scroll (`document.body.style.overflow = 'hidden'`) en el menú móvil.
-- **DO optimizar el rendimiento de imágenes:** Incluir `fetchpriority="high"`, `loading="eager"` y dimensiones explícitas (`width` y `height`) en la imagen Hero, y `loading="lazy"` con `decoding="async"` en imágenes secundarias.
+- **DO optimizar el rendimiento de imágenes:** Incluir `fetchPriority="high"`, `loading="eager"` y dimensiones explícitas (`width` y `height`) en la imagen Hero, y `loading="lazy"` con `decoding="async"` en imágenes secundarias.
 - **DO utilizar `viewport={{ once: true }}` en Framer Motion:** Para todas las animaciones vinculadas al desplazamiento, evitando repeticiones de renderizado innecesarias.
 - **DO aplicar peek affordance móvil en carruseles de tarjetas:** En pantallas móviles (`< md`), estructurar los contenedores de tarjetas múltiples (`TargetAudience`, `Testimonials`) con desplazamiento táctil horizontal elástico (`flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide no-scrollbar pb-4 px-4 -mx-4`) y tarjetas contenidas con peek affordance explícito (`w-[82vw] max-w-[320px] flex-shrink-0 snap-center rounded-3xl p-6 flex flex-col justify-between`), previniendo estrictamente regresiones a listas verticales excesivamente largas que fatiguen a la usuaria.
 - **DO implementar Sticky CTA móvil diferido y microinteracciones:** Mantener la barra flotante rápida móvil (`StickyCTA.jsx`) condicionada reactivamente a superar el primer pliegue visual (`window.scrollY >= 420`) con `AnimatePresence`. Enriquecer los botones primarios con halo terracota (`hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)]`), desplazamiento interactivo de flecha (`group-hover:translate-x-1`) y rotación fluida de 45° en acordeones de FAQ.
@@ -73,7 +73,7 @@ El agente debe interactuar con el entorno mediante los scripts definidos en `pac
 | `npm run build` | Compila los activos optimizados de producción en la carpeta `dist/`. | Sandbox (`BypassSandbox: false`) |
 | `npm run lint` | Ejecuta ESLint sobre el árbol de código fuente para detectar anomalías estáticas. | Sandbox (`BypassSandbox: false`) |
 | `npm run preview` | Previsualiza el bundle compilado de `dist/` en un servidor estático local. | Local / Background |
-| `npm run deploy` | Ejecuta el build y publica la carpeta `dist/` en la rama `gh-pages` vía `gh-pages`. | Terminal con acceso a Git |
+| `npm run deploy` | Compila el bundle de producción y lo publica en Firebase Hosting vía Firebase CLI (`firebase deploy --only hosting`). | Terminal con acceso a Firebase CLI |
 
 ### 4.2. Directrices de ejecución en Antigravity
 - **Prioridad de sandboxing:** Ejecutar siempre los comandos de compilación (`npm run build`) y verificación estática (`npm run lint`) dentro del entorno seguro aislado (`BypassSandbox: false`).
@@ -106,11 +106,11 @@ Antes de reportar una tarea como completada o dar luz verde a un despliegue, el 
 
 - [ ] **1. Cero truncamientos:** Confirmar que ningún archivo modificado contenga marcadores de posición, elipsis o comentarios tipo `// TODO`.
 - [ ] **2. Sentence Case riguroso:** Revisar que todos los encabezados, botones, badges y párrafos en español cumplan con la ortotipografía de la RAE (solo primera mayúscula inicial, salvo nombres propios y acrónimos).
-- [ ] **3. Ruta base GitHub Pages:** Comprobar que `vite.config.js` conserve `base: '/balletherapy-web/'` y que no existan rutas absolutas rotas (`/src/`, `/assets/` sin prefijo).
+- [ ] **3. Ruta base en Firebase Hosting:** Comprobar que `vite.config.js` conserve `base: '/'` y que los activos se resuelvan desde la raíz sin subrutas rotas.
 - [ ] **4. Área táctil de 44x44px:** Asegurar que todo botón, enlace y disparador móvil cumpla con las dimensiones mínimas de impacto táctil.
 - [ ] **5. Blindaje y codificación de WhatsApp:** Verificar que los enlaces hacia `https://wa.me/525539134996` tengan `target="_blank"`, `rel="noopener noreferrer"` y su mensaje codificado con `encodeURIComponent` con texto humano natural conforme a la SSOT, delegando la atribución de origen a GA4.
 - [ ] **6. Accesibilidad WAI-ARIA:** Comprobar atributos `aria-*` en FAQ, Focus Trap en el modal de privacidad y bloqueo de scroll en el menú móvil.
-- [ ] **7. Rendimiento de medios:** Verificar `fetchpriority="high"` y `loading="eager"` en el Hero, dimensiones explícitas en etiquetas `img` y ausencia de saltos de diseño (CLS).
+- [ ] **7. Rendimiento de medios:** Verificar `fetchPriority="high"` y `loading="eager"` en el Hero, dimensiones explícitas en etiquetas `img` y ausencia de saltos de diseño (CLS).
 - [ ] **8. Metadatos SEO y JSON-LD:** Validar la presencia de Open Graph (1200x630px), Twitter Cards, `<html lang="es">` y script de esquema estructurado en `index.html`.
 - [ ] **9. Archivos estáticos:** Confirmar la existencia de `public/robots.txt`, `public/sitemap.xml` y `public/404.html`.
 - [ ] **10. Compilación limpia:** Ejecutar `npm run build` en la terminal y constatar que el proceso finalice con código de salida `0` sin errores ni advertencias bloqueantes.

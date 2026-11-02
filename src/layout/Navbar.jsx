@@ -1,20 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { handleWhatsAppClick, getWhatsAppUrl } from '../lib/analytics';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
+  // Smart Scroll direccional con listener pasivo de alto rendimiento
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+
+      // Estado de compresión Soft Glass cuando scrollY > 20
+      setIsScrolled(currentScrollY > 20);
+
+      // Excepción obligatoria: Si el menú móvil está abierto, la barra debe ser forzosamente visible
+      if (isMobileMenuOpen) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Lógica direccional Smart Scroll
+      if (currentScrollY <= 40) {
+        // En la cabecera superior siempre visible en estado inicial
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 60) {
+        // La usuaria baja: ocultar hacia arriba
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        // La usuaria sube: reaparecer de inmediato
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobileMenuOpen]);
 
   // Bloqueo de desplazamiento del documento (Anti-scroll) al abrir el menú móvil
   useEffect(() => {
@@ -46,27 +77,32 @@ const Navbar = () => {
   return (
     <>
       <nav 
-        className="fixed top-4 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-6 flex justify-center"
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ease-in-out px-4 sm:px-6 md:px-8 ${
+          isVisible || isMobileMenuOpen 
+            ? 'translate-y-0 opacity-100 pointer-events-auto' 
+            : '-translate-y-28 opacity-0 pointer-events-none'
+        }`}
       >
+        {/* Contenedor adaptativo: 100% transparente y plano al tope; cápsula flotante Soft Glass al desplazarse */}
         <div className={`
-          relative transition-all duration-500 ease-in-out flex items-center justify-between px-5 md:px-6 py-2.5 md:py-3
+          relative flex items-center justify-between transition-all duration-300 ease-in-out
           ${isScrolled 
-            ? 'w-full max-w-4xl bg-[#FAF7F5]/92 backdrop-blur-md border border-[#EADFD9] shadow-[0_4px_20px_rgba(42,36,33,0.06)] rounded-full' 
-            : 'w-full max-w-6xl bg-white/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-brand-linen/60 md:border-transparent rounded-full md:rounded-none shadow-soft md:shadow-none'
+            ? 'w-full max-w-4xl mx-auto mt-2 sm:mt-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#FAF7F5]/95 backdrop-blur-md border border-[#EADFD9] shadow-[0_4px_20px_rgba(42,36,33,0.06)]' 
+            : 'w-full max-w-6xl mx-auto px-6 sm:px-8 py-5 sm:py-6 bg-transparent border-transparent shadow-none rounded-none backdrop-blur-none'
           }
         `}>
           
-          {/* Logotipo institucional */}
-          <a href="#inicio" className="flex flex-col leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/50 rounded-lg">
-            <span className={`font-sans font-bold tracking-[0.15em] text-brand-primary transition-all ${isScrolled ? 'text-lg' : 'text-xl'}`}>
-              Balletherapy
+          {/* Logotipo institucional de autor en cursiva editorial */}
+          <a href="#inicio" className="flex flex-col leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/50 rounded-lg group">
+            <span className={`font-serif italic font-normal tracking-wide text-brand-text hover:text-brand-primary transition-colors ${isScrolled ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'}`}>
+              Balletherapie
             </span>
-            <span className={`text-[0.55rem] tracking-[0.25em] text-brand-muted text-center transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 mt-1'}`}>
-              wellness studio
+            <span className={`font-sans not-italic text-[0.65rem] tracking-widest text-brand-muted transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 mt-1'}`}>
+              Wellness studio
             </span>
           </a>
 
-          {/* Menú de escritorio */}
+          {/* Menú de navegación en escritorio */}
           <div className="hidden md:flex items-center gap-6">
             <ul className="flex items-center gap-6">
               {navLinks.map((link, index) => (
@@ -86,7 +122,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleWhatsAppClick('Navbar')}
-              className="glass-button px-6 py-2.5 rounded-full font-medium text-xs tracking-wider shadow-soft hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)] active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary/50 transition-all duration-300"
+              className="glass-button px-6 py-2.5 rounded-full font-medium text-xs tracking-wider shadow-soft hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)] active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary/50 transition-all duration-300 min-h-[44px]"
             >
               Agendar clase
             </a>
@@ -96,7 +132,10 @@ const Navbar = () => {
           <button 
             type="button"
             className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-primary rounded-full hover:bg-brand-linen/30 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary/50 cursor-pointer transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              setIsVisible(true);
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
             aria-expanded={isMobileMenuOpen}
             aria-label={isMobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             aria-controls="mobile-nav-menu"
@@ -106,7 +145,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Menú móvil de pantalla completa con desenfoque y scroll seguro */}
+      {/* Menú móvil de pantalla completa con desenfoque y bloqueo de scroll */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

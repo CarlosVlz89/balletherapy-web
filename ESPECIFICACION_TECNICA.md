@@ -316,14 +316,14 @@ Para garantizar un posicionamiento óptimo en motores de búsqueda y previsualiz
   ```
 
 ### 6.2. Metadatos Open Graph y Twitter Cards
-Las imágenes de previsualización deben respetar la proporción 1.91:1 con resolución recomendada de **1200 x 630 píxeles** para evitar recortes indeseados en WhatsApp e Instagram:
+Las imágenes de previsualización deben respetar la proporción 1.91:1 con resolución recomendada de **1200 x 630 píxeles** para evitar recortes indeseados en WhatsApp e Instagram, utilizando la versión `og-image-v2.jpg` (con invalidación de caché activa):
 ```html
 <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://balletherapie-dev.web.app/" />
 <meta property="og:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta property="og:description" content="Burnout que pesa • Barre que restaura • Movimiento que serena. Clases virtuales 100% en vivo vía Zoom con atención somática personalizada." />
-<meta property="og:image" content="https://balletherapie-dev.web.app/og-image.jpg" />
+<meta property="og:image" content="https://balletherapie-dev.web.app/og-image-v2.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="es_MX" />
@@ -333,7 +333,7 @@ Las imágenes de previsualización deben respetar la proporción 1.91:1 con reso
 <meta name="twitter:url" content="https://balletherapie-dev.web.app/" />
 <meta name="twitter:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta name="twitter:description" content="Espacio donde el barre activa, el journaling libera y tu sistema nervioso se regula. Sesiones 100% en vivo vía Zoom con atención somática personalizada." />
-<meta name="twitter:image" content="https://balletherapie-dev.web.app/og-image.jpg" />
+<meta name="twitter:image" content="https://balletherapie-dev.web.app/og-image-v2.jpg" />
 ```
 
 ### 6.3. Marcado semántico estructurado JSON-LD (Schema.org)
@@ -349,7 +349,7 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
       "alternateName": "Balletherapie",
       "url": "https://balletherapie-dev.web.app/",
       "logo": "https://balletherapie-dev.web.app/logo.png",
-      "image": "https://balletherapie-dev.web.app/og-image.jpg",
+      "image": "https://balletherapie-dev.web.app/og-image-v2.jpg",
       "description": "Método integral de bienestar para mujeres: barre somático, journaling terapéutico y meditación para el alivio del estrés y el dolor de espalda.",
       "telephone": "+52-55-3913-4996",
       "email": "balletherapystudio@gmail.com",
@@ -501,31 +501,73 @@ Para garantizar un rendimiento estelar en dispositivos móviles bajo redes celul
 - **Interaction to Next Paint (INP):** Inferior a **200 milisegundos**.
 - **Cumulative Layout Shift (CLS):** Inferior a **0.1**.
 
-### 9.2. Directrices de optimización de imágenes
-- **Formatos de última generación:** Todas las imágenes rasterizadas (`hero-bg.jpg`, `eli-about.jpg`) deben contar con versiones optimizadas en formato `.webp` o `.avif`, conservando compresión adaptada al peso objetivo (< 150 KB por imagen principal).
+### 9.2. Directrices de optimización y formatos de imagen (WebP)
+- **Formatos de última generación:** Todas las imágenes rasterizadas del proyecto (`hero-bg`, `eli-about`, `og-image`) cuentan con versiones prioritarias en formato `.webp` generadas a calidad 82 (algoritmo Lanczos/PIL method 6), logrando pesos reducidos radicalmente (< 80 KB por imagen, superando el umbral objetivo de 120 KB):
+  - `hero-bg.webp`: **37.5 KB** (reducción del 93% frente al activo original sin comprimir).
+  - `eli-about.webp`: **75.0 KB** (reducción del 35%).
+  - `og-image.jpg` y `og-image.webp`: **70.8 KB** / **41.1 KB** (optimizados para Open Graph y redes sociales).
 - **Carga prioritaria en la imagen Hero:**
   ```jsx
   <img 
-    src={heroImg} 
-    alt="Elizabeth Caballero guiando sesión de barre somático" 
+    src={heroImage} 
+    alt="Espacio sereno de bienestar y movimiento somático en Balletherapie" 
     fetchPriority="high"
     loading="eager"
     decoding="sync"
     width="500"
-    height="650"
+    height="580"
     className="w-full h-full object-cover object-center"
   />
   ```
-- **Carga diferida en imágenes secundarias:** Las imágenes debajo del primer pliegue visual (como `eli-about.jpg` en la sección Sobre Mí) deben usar `loading="lazy"` y `decoding="async"`.
-- **Prevención de CLS con dimensiones explícitas:** Todas las etiquetas `img` deben declarar explícitamente atributos `width` y `height`, o estar envueltas en contenedores con relación de aspecto fija (`aspect-[3/4]`, `aspect-square`), reservando el espacio de renderizado antes de que la imagen termine de descargarse.
+- **Carga diferida en imágenes secundarias:** Las imágenes debajo del primer pliegue visual (como `eli-about.webp` en la sección Sobre mí) deben usar `loading="lazy"` y `decoding="async"`:
+  ```jsx
+  <img
+    src={eliImage}
+    alt="Elizabeth Caballero, fundadora de Balletherapie"
+    loading="lazy"
+    decoding="async"
+    width="448"
+    height="560"
+    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+  ```
+- **Prevención de CLS con dimensiones explícitas:** Todas las etiquetas `img` declaran explícitamente atributos `width` y `height`, reservando la caja de renderizado de la imagen antes de su descarga para erradicar saltos de maquetación (CLS = 0).
 
-### 9.3. Eficiencia de renderizado y animaciones GPU
+### 9.3. Optimización de fuentes web y desbloqueo de la ruta crítica (Critical Rendering Path)
+- **Erradicación de `@import` en CSS:** Se eliminó la directiva `@import` en `src/index.css` que bloqueaba secuencialmente la construcción del árbol CSSOM y retrasaba el primer renderizado con contenido (FCP).
+- **Preconexión y carga asíncrona no bloqueante en `index.html`:**
+  ```html
+  <!-- Preconexión y carga de fuentes tipográficas de Google Fonts con display=swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  ```
+- **Parámetro `display=swap`:** Garantiza que los textos se rendericen de inmediato con fuentes de respaldo del sistema operativo mientras las fuentes personalizadas *Montserrat* y *Playfair Display* se descargan, suprimiendo periodos de texto invisible (FOIT).
+
+### 9.4. División de código (Code Splitting) en Vite
+Para no sobrecargar el hilo principal de JavaScript y evitar la descarga de paquetes monolíticos pesados, `vite.config.js` implementa separación de librerías vendor mediante Rollup (`build.rollupOptions.output.manualChunks`):
+```javascript
+build: {
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        'vendor-react': ['react', 'react-dom'],
+        'vendor-motion': ['framer-motion'],
+        'vendor-icons': ['lucide-react']
+      }
+    }
+  }
+}
+```
+Esto segrega el runtime de React (~3.7 KB), los iconos de Lucide (~6.1 KB) y el motor de animaciones de Framer Motion (~136 KB) del código de la aplicación (~242 KB), permitiendo descarga paralela HTTP/2 y persistencia selectiva en el almacenamiento en caché del navegador entre versiones.
+
+### 9.5. Eficiencia de renderizado y animaciones GPU
 - **Aceleración por hardware:** Las animaciones de Framer Motion se restringen estrictamente a propiedades delegadas al compositor de la GPU (`opacity`, `transform`). Se prohíbe animar propiedades que provoquen recálculos de layout (`width`, `height`, `top`, `margin`).
 - **Directiva de visualización única:** Todo componente animado con Framer Motion debe incluir obligatoriamente la propiedad `viewport={{ once: true }}`. Esto evita recalcular y redisparar animaciones durante el scroll repetido del usuario.
 
 ---
 
-## 10. Seguridad, privacidad LFPDPPP y resiliencia en GitHub Pages
+## 10. Seguridad, privacidad LFPDPPP y resiliencia en Firebase Hosting
 
 ### 10.1. Cumplimiento de la legislación mexicana de datos personales (LFPDPPP)
 El modal `src/components/ui/PrivacyModal.jsx` y la operación del estudio se rigen conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (México):
@@ -549,8 +591,9 @@ El modal `src/components/ui/PrivacyModal.jsx` y la operación del estudio se rig
 - El código compilado en `dist/` no debe contener claves privadas, tokens de API restringidos ni credenciales maestras.
 - La confirmación de transacciones y el envío de contraseñas de Zoom se gestionan fuera de banda (out-of-band) a través del canal privado de WhatsApp.
 
-### 10.4. Resiliencia de enrutamiento estático en Firebase Hosting (`firebase.json`)
-La Single Page Application (SPA) se despliega sobre la infraestructura CDN global de Firebase Hosting. Para garantizar que cualquier acceso directo o recarga de ruta secundaria en el navegador (ej. `/reservar`, `/metodo`) no arroje errores 404, se configura la regla nativa de reescritura en `firebase.json`:
+### 10.4. Resiliencia de enrutamiento y políticas de caché inmutable en Firebase Hosting (`firebase.json`)
+La Single Page Application (SPA) se despliega sobre la infraestructura CDN global de Firebase Hosting. Para garantizar que cualquier acceso directo o recarga de ruta secundaria en el navegador no arroje errores 404, y para maximizar la velocidad de respuesta en visitas recurrentes mediante encabezados de caché inmutables, `firebase.json` implementa reescrituras universales y directivas `Cache-Control` precisas:
+
 ```json
 {
   "hosting": {
@@ -565,11 +608,43 @@ La Single Page Application (SPA) se despliega sobre la infraestructura CDN globa
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|webp|svg|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=604800, stale-while-revalidate=86400"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
     ]
   }
 }
 ```
-Esto delega el enrutamiento y la resolución de recursos de forma limpia y transparente al cliente en React 19 sin requerir scripts paliativos de redirección.
+
+- **Activos con hash (`/assets/**`):** Directiva `public, max-age=31536000, immutable`. Al contener un hash de contenido único generado por Vite, el navegador almacena el activo por un año sin emitir solicitudes de revalidación.
+- **Imágenes y recursos multimedia:** Directiva `public, max-age=604800, stale-while-revalidate=86400` (7 días de caché con 24 horas de revalidación en segundo plano).
+- **Documento principal (`/index.html`):** Directiva `no-cache, no-store, must-revalidate`. Garantiza que cada visitante reciba siempre el archivo HTML más reciente tras un despliegue, cargando inmediatamente los nuevos hashes generados.
 
 ---
 
@@ -591,7 +666,7 @@ Antes de fusionar cambios a la rama principal o ejecutar `npm run deploy`, debe 
 | **Accesibilidad FAQ** | Navegación por teclado y prueba con lector de pantalla en el acordeón. | Botones con `aria-expanded` dinámico, paneles con `role="region"` y `aria-labelledby` correspondiente. |
 | **Accesibilidad modal** | Apertura y navegación por teclado en el modal de privacidad. | Foco atrapado en el modal (Focus Trap), cierre con tecla `Escape` y retorno de foco al disparador. |
 | **Rendimiento de imagen** | Inspección del elemento Hero en red móvil simulada. | Atributos `fetchPriority="high"`, `loading="eager"`, dimensiones explícitas y ausencia de CLS. |
-| **SEO y metadatos** | Inspección del código fuente HTML de la página compilada. | `<html lang="es">`, canonical URL, etiquetas Open Graph 1200x630px y script JSON-LD válidos. |
+| **SEO y metadatos** | Inspección del código fuente HTML de la página compilada. | `<html lang="es">`, canonical URL, etiquetas Open Graph 1200x630px con `og-image-v2.jpg` (y `og-image.jpg` de respaldo) y script JSON-LD válidos. |
 | **Archivos estáticos** | Solicitud directa de `/robots.txt` y `/sitemap.xml`. | Archivos accesibles bajo la raíz del dominio con referencias absolutas correctas. |
 | **Compilación Vite** | Ejecución de `npm run build` en la terminal. | Generación limpia de la carpeta `dist/` con código de salida `0` y cero errores de TypeScript/Linter. |
 | **Resolución raíz en Firebase Hosting** | Carga del sitio en `https://balletherapie-dev.web.app/` o servidor local de preview. | Resolución correcta de todos los activos estáticos en la raíz (`/`) sin errores 404 en scripts o imágenes. |

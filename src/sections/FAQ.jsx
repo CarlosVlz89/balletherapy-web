@@ -6,7 +6,7 @@ import { handleWhatsAppClick, getWhatsAppUrl } from '../lib/analytics';
 const faqs = [
   {
     question: "¿Necesito saber ballet o ser flexible?",
-    answer: "¡Para nada! Balletherapy no es danza técnica; es terapia de movimiento. No buscamos que levantes la pierna hasta la oreja, sino que reconectes con tu cuerpo respetando tu anatomía."
+    answer: "¡Para nada! Balletherapie no es danza técnica; es terapia de movimiento. No buscamos que levantes la pierna hasta la oreja, sino que reconectes con tu cuerpo respetando tu anatomía."
   },
   {
     question: "¿Qué necesito para la clase?",

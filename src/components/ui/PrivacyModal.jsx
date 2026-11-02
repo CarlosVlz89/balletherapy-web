@@ -122,7 +122,7 @@ const PrivacyModal = ({ isOpen, onClose, triggerRef }) => {
               <p><strong className="text-brand-dark font-medium">Última actualización: Febrero 2026</strong></p>
               
               <p>
-                <strong className="text-brand-dark font-medium">Balletherapy</strong>, operado por <strong className="text-brand-dark font-medium">Elizabeth Caballero</strong>, (en adelante "El Responsable"), con domicilio para oír y recibir notificaciones en Ciudad de México, es el responsable del uso y protección de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), y al respecto le informamos lo siguiente:
+                <strong className="text-brand-dark font-medium">Balletherapie</strong>, operado por <strong className="text-brand-dark font-medium">Elizabeth Caballero</strong>, (en adelante "El Responsable"), con domicilio para oír y recibir notificaciones en Ciudad de México, es el responsable del uso y protección de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), y al respecto le informamos lo siguiente:
               </p>
 
               <h4 className="font-serif font-bold text-brand-dark mt-4 text-base">

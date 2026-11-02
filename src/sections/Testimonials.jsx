@@ -5,21 +5,21 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     quote: "Estaba cansada de sentirme cansada. No tenía tiempo ni energía, pero estas sesiones me cambiaron la mente, el cuerpo y el alma.",
-    author: "Alumna de Balletherapy",
+    author: "Alumna de Balletherapie",
     role: "CEO",
     initial: "C",
     delay: 0
   },
   {
     quote: "Me encantan las clases, siempre aprende algo nuevo mi cuerpo. Es increíble cómo movimientos tan sutiles pueden liberar tanta tensión.",
-    author: "Alumna de Balletherapy",
+    author: "Alumna de Balletherapie",
     role: "Madre y ejecutiva",
     initial: "M",
     delay: 0.2
   },
   {
     quote: "Por fin un lugar donde no me siento juzgada por mi flexibilidad. Aquí vengo a sanar mi espalda, no a competir con nadie.",
-    author: "Alumna de Balletherapy",
+    author: "Alumna de Balletherapie",
     role: "Abogada corporativa",
     initial: "A",
     delay: 0.4

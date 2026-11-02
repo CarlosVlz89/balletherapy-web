@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
-import eliImage from '../assets/eli-about.jpg';
+import eliImage from '../assets/eli-about.webp';
 
 const AboutMe = () => {
   return (
@@ -43,7 +43,7 @@ const AboutMe = () => {
             <div className="aspect-[4/5] rounded-2xl overflow-hidden relative shadow-[0_8px_30px_rgba(42,36,33,0.06)] border border-brand-linen bg-white">
               <img
                 src={eliImage}
-                alt="Elizabeth Caballero, fundadora de Balletherapy"
+                alt="Elizabeth Caballero, fundadora de Balletherapie"
                 loading="lazy"
                 decoding="async"
                 width="448"
@@ -85,7 +85,7 @@ const AboutMe = () => {
             </div>
 
             <p>
-              <strong className="text-brand-dark font-medium">Balletherapy nace de esa sanación</strong>: un método para que tú también transformes tu dolor en equilibrio.
+              <strong className="text-brand-dark font-medium">Balletherapie nace de esa sanación</strong>: un método para que tú también transformes tu dolor en equilibrio.
             </p>
           </motion.div>
 

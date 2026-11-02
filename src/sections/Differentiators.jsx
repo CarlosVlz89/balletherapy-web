@@ -70,7 +70,7 @@ const Differentiators = () => {
               Atrapadas en la mente, el cuerpo paga el precio: estrés y emociones guardadas. El ballet clásico guarda un secreto: <span className="italic font-medium text-brand-primary">una columna alineada es equilibrio</span>.
             </p>
             <p className="text-brand-dark text-base sm:text-lg leading-relaxed font-light">
-              No se trata de ser bailarina, sino de habitar tu cuerpo con fuerza y serenidad. Balletherapy es la fusión para devolverte el equilibrio en medio del caos.
+              No se trata de ser bailarina, sino de habitar tu cuerpo con fuerza y serenidad. Balletherapie es la fusión para devolverte el equilibrio en medio del caos.
             </p>
           </motion.div>
         </div>

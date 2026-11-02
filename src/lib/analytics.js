@@ -1,5 +1,5 @@
 /**
- * Utilidades de analítica web (GA4) y generación de enlaces de WhatsApp para Balletherapy
+ * Utilidades de analítica web (GA4) y generación de enlaces de WhatsApp para Balletherapie
  */
 
 export const trackWhatsAppLead = (sourceSection) => {
@@ -20,8 +20,9 @@ const WHATSAPP_PHONE = '525539134996';
 
 const WHATSAPP_MESSAGES = {
   Hero: 'Hola! Quiero agendar mi clase de prueba gratis',
-  Horarios: 'Hola! Me gustaría inscribirme a las clases matutinas',
-  FAQ: 'Hola! Tengo una duda sobre las clases de Balletherapy',
+  Horarios: 'Hola! Me gustaría consultar los horarios disponibles para esta semana',
+  Schedule: 'Hola! Me gustaría consultar los horarios disponibles para esta semana',
+  FAQ: 'Hola! Tengo una duda sobre las clases de Balletherapie',
   Navbar: 'Hola! Me gustaría agendar mi clase de prueba',
   StickyCTA: 'Hola! Quiero agendar mi clase de prueba gratis',
 };

@@ -12,7 +12,7 @@ import StickyCTA from './components/ui/StickyCTA';
 
 function App() {
   return (
-    <main className="font-sans antialiased text-brand-text bg-brand-base selection:bg-brand-primary/20">
+    <main className="relative font-sans antialiased text-brand-text bg-brand-base selection:bg-brand-primary/20">
       
       {/* Barra de navegación flotante scroll-aware */}
       <Navbar />
