@@ -22,7 +22,7 @@ Balletherapie es un método integral y santuario de bienestar concebido para la 
 | **Público objetivo** | Mujeres de 24 a 55 años estructuradas en 3 arquetipos clave: La profesional en burnout, La joven preventiva y La madre multitarea. |
 | **Pilares del método** | 1. Journaling terapéutico manuscrito (procesar el estrés y ruido mental)<br>2. Barre somático (alineación y descompresión lumbar sin impacto articular)<br>3. Meditación aplicada (regulación nerviosa y límites energéticos) |
 | **Canales oficiales** | **WhatsApp oficial:** `+52 55 3913 4996` (enlace directo: `https://wa.me/525539134996`)<br>**Correo institucional:** `balletherapystudio@gmail.com`<br>**Instagram oficial:** `@balletherapy` (`https://instagram.com/balletherapy`) |
-| **Plataforma y despliegue** | Single Page Application (SPA) construida en React 19 + Vite + Tailwind CSS, alojada en Firebase Hosting bajo el proyecto `balletherapie-dev` (`https://balletherapie-dev.web.app`) con base path `/`. |
+| **Plataforma y despliegue** | Single Page Application (SPA) construida en React 19 + Vite + Tailwind CSS, alojada en Firebase Hosting bajo el proyecto `balletherapie-dev` con dominio de producción `https://balletherapie.com` (`https://balletherapie-dev.web.app` como alias de desarrollo) con base path `/`. |
 
 ---
 
@@ -295,7 +295,7 @@ Para garantizar un posicionamiento óptimo en motores de búsqueda y previsualiz
 - **Etiqueta de idioma:** `<html lang="es">` obligatoria para indexación regional hispanohablante.
 - **Etiqueta canónica:**
   ```html
-  <link rel="canonical" href="https://balletherapie-dev.web.app/" />
+  <link rel="canonical" href="https://balletherapie.com/" />
   ```
 - **Favicons oficiales Warm Editorial:**
   ```html
@@ -320,20 +320,20 @@ Las imágenes de previsualización deben respetar la proporción 1.91:1 con reso
 ```html
 <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://balletherapie-dev.web.app/" />
+<meta property="og:url" content="https://balletherapie.com/" />
 <meta property="og:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta property="og:description" content="Burnout que pesa • Barre que restaura • Movimiento que serena. Clases virtuales 100% en vivo vía Zoom con atención somática personalizada." />
-<meta property="og:image" content="https://balletherapie-dev.web.app/og-image-v2.jpg" />
+<meta property="og:image" content="https://balletherapie.com/og-image-v2.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="es_MX" />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content="https://balletherapie-dev.web.app/" />
+<meta name="twitter:url" content="https://balletherapie.com/" />
 <meta name="twitter:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta name="twitter:description" content="Espacio donde el barre activa, el journaling libera y tu sistema nervioso se regula. Sesiones 100% en vivo vía Zoom con atención somática personalizada." />
-<meta name="twitter:image" content="https://balletherapie-dev.web.app/og-image-v2.jpg" />
+<meta name="twitter:image" content="https://balletherapie.com/og-image-v2.jpg" />
 ```
 
 ### 6.3. Marcado semántico estructurado JSON-LD (Schema.org)
@@ -344,12 +344,12 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
   "@graph": [
     {
       "@type": "HealthAndBeautyBusiness",
-      "@id": "https://balletherapie-dev.web.app/#business",
+      "@id": "https://balletherapie.com/#business",
       "name": "Balletherapie Wellness Studio",
       "alternateName": "Balletherapie",
-      "url": "https://balletherapie-dev.web.app/",
-      "logo": "https://balletherapie-dev.web.app/logo.png",
-      "image": "https://balletherapie-dev.web.app/og-image-v2.jpg",
+      "url": "https://balletherapie.com/",
+      "logo": "https://balletherapie.com/logo.png",
+      "image": "https://balletherapie.com/og-image-v2.jpg",
       "description": "Método integral de bienestar para mujeres: barre somático, journaling terapéutico y meditación para el alivio del estrés y el dolor de espalda.",
       "telephone": "+52-55-3913-4996",
       "email": "balletherapystudio@gmail.com",
@@ -360,7 +360,7 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
       },
       "founder": {
         "@type": "Person",
-        "@id": "https://balletherapie-dev.web.app/#founder",
+        "@id": "https://balletherapie.com/#founder",
         "name": "Elizabeth Caballero",
         "jobTitle": "Terapeuta de movimiento y bailarina",
         "description": "Fundadora de Balletherapie, especialista en descompresión espinal y regulación del sistema nervioso."
@@ -377,11 +377,11 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
     },
     {
       "@type": "Course",
-      "@id": "https://balletherapie-dev.web.app/#course",
+      "@id": "https://balletherapie.com/#course",
       "name": "Clases de barre somático y journaling Balletherapie",
       "description": "Sesiones matutinas online 100% en vivo vía Zoom con atención somática personalizada y corrección postural en tiempo real.",
       "provider": {
-        "@id": "https://balletherapie-dev.web.app/#business"
+        "@id": "https://balletherapie.com/#business"
       }
     }
   ]
@@ -396,7 +396,7 @@ Ubicados en el directorio `/public/` para ser copiados íntegramente a `/dist/` 
 User-agent: *
 Allow: /
 
-Sitemap: https://balletherapie-dev.web.app/sitemap.xml
+Sitemap: https://balletherapie.com/sitemap.xml
 ```
 
 **Contenido de `public/sitemap.xml`:**
@@ -404,7 +404,7 @@ Sitemap: https://balletherapie-dev.web.app/sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://balletherapie-dev.web.app/</loc>
+    <loc>https://balletherapie.com/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -669,7 +669,7 @@ Antes de fusionar cambios a la rama principal o ejecutar `npm run deploy`, debe 
 | **SEO y metadatos** | Inspección del código fuente HTML de la página compilada. | `<html lang="es">`, canonical URL, etiquetas Open Graph 1200x630px con `og-image-v2.jpg` (y `og-image.jpg` de respaldo) y script JSON-LD válidos. |
 | **Archivos estáticos** | Solicitud directa de `/robots.txt` y `/sitemap.xml`. | Archivos accesibles bajo la raíz del dominio con referencias absolutas correctas. |
 | **Compilación Vite** | Ejecución de `npm run build` en la terminal. | Generación limpia de la carpeta `dist/` con código de salida `0` y cero errores de TypeScript/Linter. |
-| **Resolución raíz en Firebase Hosting** | Carga del sitio en `https://balletherapie-dev.web.app/` o servidor local de preview. | Resolución correcta de todos los activos estáticos en la raíz (`/`) sin errores 404 en scripts o imágenes. |
+| **Resolución raíz en Firebase Hosting** | Carga del sitio en `https://balletherapie.com/` (o alias `https://balletherapie-dev.web.app/`) o servidor local de preview. | Resolución correcta de todos los activos estáticos en la raíz (`/`) sin errores 404 en scripts o imágenes. |
 
 ---
 

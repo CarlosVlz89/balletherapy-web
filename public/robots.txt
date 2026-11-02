@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://balletherapie-dev.web.app/sitemap.xml
+Sitemap: https://balletherapie.com/sitemap.xml
