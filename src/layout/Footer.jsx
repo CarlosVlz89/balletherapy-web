@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-brand-dark text-brand-base pt-14 pb-8 border-t border-brand-linen/20 relative overflow-hidden">
+      <footer className="bg-brand-dark text-brand-base pt-14 pb-24 md:pb-8 border-t border-brand-linen/20 relative overflow-hidden">
         {/* Halos sutiles de fondo */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-primary/10 rounded-full blur-[90px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-linen/5 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
@@ -20,8 +20,8 @@ const Footer = () => {
             
             {/* Columna Marca: 1 col en móvil, 2 cols en desktop */}
             <div className="md:col-span-2 space-y-4 md:space-y-6">
-              <h2 className="text-3xl font-serif text-brand-base">
-                Balletherapy<span className="text-brand-primary">.</span>
+              <h2 className="font-serif italic font-normal tracking-wide text-2xl sm:text-3xl text-brand-text !text-brand-base">
+                Balletherapie<span className="text-brand-primary">.</span>
               </h2>
               <p className="max-w-sm text-sm leading-relaxed text-brand-linen/85 font-light">
                 Un espacio de reconciliación integral diseñado para la mujer contemporánea. 
@@ -34,14 +34,14 @@ const Footer = () => {
                   href="https://instagram.com/balletherapy" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  aria-label="Instagram de Balletherapy"
+                  aria-label="Instagram de Balletherapie"
                   className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-brand-linen/15 text-brand-linen hover:text-white hover:bg-white/10 transition-colors active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary"
                 >
                   <Instagram className="w-5 h-5" strokeWidth={1.75} />
                 </a>
                 <a 
                   href="mailto:balletherapystudio@gmail.com" 
-                  aria-label="Correo electrónico de Balletherapy"
+                  aria-label="Correo electrónico de Balletherapie"
                   className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-brand-linen/15 text-brand-linen hover:text-white hover:bg-white/10 transition-colors active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary"
                 >
                   <Mail className="w-5 h-5" strokeWidth={1.75} />
@@ -51,7 +51,7 @@ const Footer = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   onClick={() => trackWhatsAppLead('Footer')}
-                  aria-label="WhatsApp de Balletherapy"
+                  aria-label="WhatsApp de Balletherapie"
                   className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-brand-linen/15 text-brand-linen hover:text-white hover:bg-white/10 transition-colors active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-primary"
                 >
                   <MessageCircle className="w-5 h-5" strokeWidth={1.75} />
@@ -59,8 +59,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Enlaces ("Explora") y "Contacto": en móvil organizados en 2 columnas limpias */}
-            <div className="grid grid-cols-2 gap-6 sm:gap-8 md:col-span-2 md:grid-cols-2">
+            {/* Enlaces ("Explora") y "Contacto": sub-cuadrícula con ancho garantizado desde 360px */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
               {/* Columna Explora */}
               <div>
                 <h4 className="font-serif text-brand-base mb-4 md:mb-6 text-base">Explora</h4>
@@ -82,7 +82,7 @@ const Footer = () => {
                     <li>
                       <a 
                         href="mailto:balletherapystudio@gmail.com" 
-                        className="text-brand-linen/80 hover:text-white transition-colors break-words text-xs sm:text-sm"
+                        className="text-xs sm:text-sm text-brand-muted hover:text-brand-base transition-colors inline-block break-normal sm:break-all"
                       >
                         balletherapystudio@gmail.com
                       </a>
@@ -93,7 +93,7 @@ const Footer = () => {
                         target="_blank" 
                         rel="noopener noreferrer" 
                         onClick={() => trackWhatsAppLead('Footer')}
-                        className="text-brand-linen/80 hover:text-white transition-colors"
+                        className="text-brand-linen/80 hover:text-white transition-colors inline-block py-0.5"
                       >
                         +52 55 3913 4996
                       </a>
@@ -121,9 +121,9 @@ const Footer = () => {
 
           </div>
 
-          {/* Barra inferior de copyright */}
+          {/* Barra inferior de copyright con despeje para StickyCTA */}
           <div className="border-t border-brand-linen/15 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brand-linen/70 font-light text-center sm:text-left">
-            <p>© {new Date().getFullYear()} Balletherapy. Todos los derechos reservados.</p>
+            <p>© {new Date().getFullYear()} Balletherapie. Todos los derechos reservados.</p>
             <p className="text-brand-linen/50">Bienestar consciente y movimiento somático</p>
           </div>
         </div>

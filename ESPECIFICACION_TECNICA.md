@@ -1,57 +1,60 @@
-# Especificación técnica, arquitectura y control de calidad (QA): Balletherapy
+# Especificación técnica, arquitectura y control de calidad (QA): Balletherapie
 
 Documento maestro integral de arquitectura de software, especificación visual editorial (Warm Editorial + Soft Glass), principios de neuromarketing y psicología cognitiva, modelo operativo y comercial asistido por WhatsApp, protocolos de seguridad y privacidad ARCO, accesibilidad técnica (WCAG 2.1 AA / WAI-ARIA), estrategia SEO, analítica de conversión, optimización de rendimiento web (Core Web Vitals) y matriz de control de calidad.
 
-Este documento constituye la **única fuente de la verdad (Single Source of Truth - SSOT)** para el producto y la plataforma web de Balletherapy.
+Este documento constituye la **única fuente de la verdad (Single Source of Truth - SSOT)** para el producto y la plataforma web de Balletherapie.
 
 ---
 
 ## 1. Resumen ejecutivo y parámetros de negocio
 
-Balletherapy es un método integral y santuario de bienestar concebido para la mujer contemporánea, fundado y dirigido por Elizabeth Caballero. El producto combina una landing page interactiva de alta conversión —diseñada para aliviar la carga mental, el sedentarismo laboral y el agotamiento crónico (burnout)— con un canal de atención personalizada y reserva asistida de mujer a mujer mediante WhatsApp, ofreciendo clases virtuales 100% en vivo por Zoom con atención somática personalizada y corrección postural en tiempo real.
+Balletherapie es un método integral y santuario de bienestar concebido para la mujer contemporánea, fundado y dirigido por Elizabeth Caballero. El producto combina una landing page interactiva de alta conversión —diseñada para aliviar la carga mental, el sedentarismo laboral y el agotamiento crónico (burnout)— con un canal de atención personalizada y reserva asistida de mujer a mujer mediante WhatsApp, ofreciendo clases virtuales 100% en vivo por Zoom con atención somática personalizada y corrección postural en tiempo real.
 
 | Parámetro del proyecto | Especificación detallada |
 | :--- | :--- |
-| **Nombre comercial** | Balletherapy (identidad visual editorial: Balletherapy Wellness Studio) |
+| **Nombre comercial** | Balletherapie (identidad visual editorial: Balletherapie Wellness Studio) |
 | **Fundadora y directora** | Elizabeth Caballero ("Eli"), bailarina profesional y terapeuta de movimiento |
 | **Propuesta de valor** | Fusión sinérgica de barre somático, journaling terapéutico y meditación aplicada para descomprimir la columna vertebral, regular el sistema nervioso y sanar el agotamiento crónico (burnout) sin estándares punitivos ni dolor. |
 | **Lema principal (Hero)** | Burnout que pesa • Barre que restaura • Movimiento que serena |
-| **Titular institucional** | Horas sentada. Días iguales. Balletherapy. |
+| **Titular institucional** | Horas sentada. Días iguales. Balletherapie. |
 | **Subtítulo axial** | El espacio donde el barre activa, el journaling libera y tu sistema nervioso se regula. |
 | **Esquema de precios** | Inversión flexible: clase de prueba gratuita de bienvenida, paquetes a tu medida (combos) o pago por clase individual. Sin mensualidades forzosas ("Pagas solo lo que usas"). |
 | **Público objetivo** | Mujeres de 24 a 55 años estructuradas en 3 arquetipos clave: La profesional en burnout, La joven preventiva y La madre multitarea. |
 | **Pilares del método** | 1. Journaling terapéutico manuscrito (procesar el estrés y ruido mental)<br>2. Barre somático (alineación y descompresión lumbar sin impacto articular)<br>3. Meditación aplicada (regulación nerviosa y límites energéticos) |
 | **Canales oficiales** | **WhatsApp oficial:** `+52 55 3913 4996` (enlace directo: `https://wa.me/525539134996`)<br>**Correo institucional:** `balletherapystudio@gmail.com`<br>**Instagram oficial:** `@balletherapy` (`https://instagram.com/balletherapy`) |
-| **Plataforma y despliegue** | Single Page Application (SPA) construida en React 19 + Vite + Tailwind CSS, alojada en GitHub Pages bajo la ruta base `/balletherapy-web/` (`https://carlosvlz89.github.io/balletherapy-web/`). |
+| **Plataforma y despliegue** | Single Page Application (SPA) construida en React 19 + Vite + Tailwind CSS, alojada en Firebase Hosting bajo el proyecto `balletherapie-dev` (`https://balletherapie-dev.web.app`) con base path `/`. |
 
 ---
 
 ## 2. Identidad de marca, arquetipos y narrativa editorial
 
 ### 2.1. Propósito y valores del método
-A diferencia del fitness tradicional, el ballet clásico convencional o las disciplinas de acondicionamiento físico de alto impacto, Balletherapy no persigue la flexibilidad extrema, la hipertrofia ni la pose perfecta bajo estándares punitivos. Su propósito esencial es la **reconciliación somatosensorial integral**: devolver el equilibrio biomecánico y emocional a través de la liberación de tensiones en la columna vertebral, la regulación del sistema nervioso autónomo y la reconexión consciente con el cuerpo.
+A diferencia del fitness tradicional, el ballet clásico convencional o las disciplinas de acondicionamiento físico de alto impacto, Balletherapie no persigue la flexibilidad extrema, la hipertrofia ni la pose perfecta bajo estándares punitivos. Su propósito esencial es la **reconciliación somatosensorial integral**: devolver el equilibrio biomecánico y emocional a través de la liberación de tensiones en la columna vertebral, la regulación del sistema nervioso autónomo y la reconexión consciente con el cuerpo.
 
 ### 2.2. Historia de resiliencia y voz de la fundadora
 La marca está personificada y dirigida por **Elizabeth Caballero ("Eli")**, bailarina y terapeuta de movimiento. Su narrativa biográfica define el tono de comunicación:
 - **Resiliencia y legitimidad orgánica:** A los 16 años enfrentó el rechazo en pruebas de ballet profesional debido a no cumplir con cánones anatómicos tradicionales ni la edad temprana exigida. Posteriormente, sufrió dos caídas graves y una hernia discal que detuvieron su práctica dancística.
-- **Epifanía de sanación:** Este punto de quiebre transformó su relación con el movimiento. Comprendió que su dolor crónico de espalda no era un mero fallo mecánico, sino la somatización acumulada de exigencias emocionales y mentales. De esta experiencia nació Balletherapy.
+- **Epifanía de sanación:** Este punto de quiebre transformó su relación con el movimiento. Comprendió que su dolor crónico de espalda no era un mero fallo mecánico, sino la somatización acumulada de exigencias emocionales y mentales. De esta experiencia nació Balletherapie.
 - **Tono de voz institucional:** Cálido, compasivo, íntimo, sereno, no intimidante y editorialmente sofisticado. Trata a la usuaria de mujer a mujer, desmantelando la culpa por la falta de tiempo o la falta de flexibilidad. Nunca emplea consignas agresivas tipo "no pain no gain" ni elitismo técnico.
 
 ### 2.3. Arquetipos de usuaria y mapeo de síntomas
-La segmentación se restringe a exactamente tres arquetipos representativos para evitar la sobrecarga de opciones (Ley de Hick) y maximizar la autoidentificación empática:
+La segmentación se estructura en tres perfiles representativos para evitar la sobrecarga de opciones (Ley de Hick) y maximizar la autoidentificación empática. En la interfaz pública de usuaria, se elimina la nomenclatura técnica de "Arquetipo 01/02/03" en favor de una presentación cálida y cercana, identificando cada perfil mediante su badge de ícono circular, el titular descriptivo en Playfair Display y un micro-tag temático de apoyo:
 
 1. **La profesional en burnout:**
+   - *Micro-tag temático:* "Tensión y sobrecarga".
    - *Metáfora cognitiva:* "Tu cuerpo es solo un 'vehículo de productividad' que empieza a fallar."
    - *Síntomas físicos y emocionales:* Dolor crónico de espalda alta y cuello, insomnio paradójico (cansancio extremo pero mente hiperactiva en la cama), fines de semana y vacaciones utilizados exclusivamente para intentar recuperarse.
-   - *Acento cromático en UI:* Terracota (`brand.primary`).
+   - *Identidad cromática en UI:* Fondo con tinte terracota pálido `bg-[#FAF3F2]/90 backdrop-blur-xl`, borde perimetral `border-[#E8D6D5]`, badge de ícono `bg-brand-primary/10 text-brand-primary`.
 2. **La joven preventiva:**
+   - *Micro-tag temático:* "Sedentarismo digital".
    - *Metáfora cognitiva:* "Intentas mantener el equilibrio, pero la carga laboral siempre gana."
    - *Síntomas físicos y emocionales:* Ansiedad y fatiga visual por exposición a pantallas, comidas rápidas frente a la computadora, el concepto de "tiempo para mí" se reduce a scrollear redes sociales sin descanso real.
-   - *Acento cromático en UI:* Lino neutro (`brand.linen`) con tarjeta elevada.
+   - *Identidad cromática en UI:* Fondo con tinte lino neutro arena `bg-[#F6F2EE]/90 backdrop-blur-xl`, borde perimetral `border-[#E5DDD6]`, badge de ícono `bg-[#685D57]/10 text-[#685D57]`.
 3. **La madre multitarea:**
+   - *Micro-tag temático:* "Autoexigencia diaria".
    - *Metáfora cognitiva:* "Cuidas de todos menos de ti misma. Sientes que debes poder con todo."
    - *Síntomas físicos y emocionales:* Fatiga crónica acompañada de culpa por tomar pausas personales, aislamiento selectivo, sensación de vivir en piloto automático cumpliendo exigencias ajenas.
-   - *Acento cromático en UI:* Borgoña profundo (`brand.secondary`).
+   - *Identidad cromática en UI:* Fondo con tinte borgoña suave `bg-[#F7F2F3]/90 backdrop-blur-xl`, borde perimetral `border-[#E6D9DC]`, badge de ícono `bg-brand-secondary/10 text-brand-secondary`.
 
 ### 2.4. Los tres pilares metodológicos
 1. **Journaling terapéutico:** Descarga manuscrita y procesamiento cognitivo del estrés previo o posterior al movimiento, aterrizando el ruido mental en el papel para clarificar las emociones.
@@ -65,7 +68,7 @@ Bloque de contención emocional en carbón profundo (`#2A2421`) que neutraliza l
 
 ### 2.6. Lemas y declaraciones institucionales oficiales
 - *"Burnout que pesa • Barre que restaura • Movimiento que serena"*
-- *"Horas sentada. Días iguales. Balletherapy."*
+- *"Horas sentada. Días iguales. Balletherapie."*
 - *"El espacio donde el barre activa, el journaling libera y tu sistema nervioso se regula."*
 - *"Equilibra tu interior, fortalece tu exterior."*
 - *"De la rigidez a la libertad."*
@@ -107,8 +110,9 @@ body {
 ```
 
 ### 3.2. Especificaciones tipográficas y ortotipografía RAE
-- **Regla de oro de Sentence Case:** En todos los titulares (`h1`, `h2`, `h3`, `h4`), botones, enlaces, descripciones, acordeones y textos legales, únicamente la letra inicial de la primera palabra debe ir en mayúscula, manteniendo en minúsculas el resto, a excepción estricta de nombres propios de personas o marcas registradas (ej. *Elizabeth Caballero*, *Zoom*, *WhatsApp*, *Balletherapy*) y acrónimos técnicos (ej. *FAQ*, *ARCO*, *CTA*, *MXN*, *SEO*, *GA4*).
+- **Regla de oro de Sentence Case:** En todos los titulares (`h1`, `h2`, `h3`, `h4`), botones, enlaces, descripciones, acordeones y textos legales, únicamente la letra inicial de la primera palabra debe ir en mayúscula, manteniendo en minúsculas el resto, a excepción estricta de nombres propios de personas o marcas registradas (ej. *Elizabeth Caballero*, *Zoom*, *WhatsApp*, *Balletherapie*) y acrónimos técnicos (ej. *FAQ*, *ARCO*, *CTA*, *MXN*, *SEO*, *GA4*).
 - **Prohibición de `uppercase` indiscriminado:** Queda terminantemente prohibido el uso de la clase utilitaria `uppercase` de Tailwind CSS en párrafos, títulos largos o botones principales. Solo se permite en micro-etiquetas de sistema tipo badge (como *"Lunes a Viernes"* o *"Voces Reales"*) de máximo 3 palabras y tamaño no mayor a `12px` (`text-[0.65rem]` o `text-xs`) con alto interletreado (`tracking-widest`).
+- **Wordmark institucional de autor en cursiva editorial:** `Playfair Display Italic` (`font-serif italic font-normal tracking-wide`), aplicado al logotipo textual de marca en la barra de navegación superior (`Navbar.jsx`: `text-xl sm:text-2xl text-brand-text hover:text-brand-primary`) y en el pie de página institucional (`Footer.jsx`: `text-2xl sm:text-3xl text-brand-text !text-brand-base`), aportando distinción editorial orgánica. Se complementa con micro-descriptor sans-serif limpio en estricto Sentence Case (*"Wellness studio"*, `font-sans not-italic text-[0.65rem] tracking-widest text-brand-muted`).
 - **Tipografía de titulares (Display Serif):** `Playfair Display`, serif (pesos 400, 600, 700 y cursiva). Transmite elegancia reflexiva, serenidad orgánica y distinción editorial.
 - **Tipografía de lectura e interfaz (Geometric Sans-Serif):** `Montserrat`, sans-serif (pesos 300, 400, 500, 600). Otorga legibilidad nítida, descanso visual y ritmo geométrico en pantallas móviles.
 
@@ -124,18 +128,20 @@ body {
 - **Radios de curvatura estándar:**
   - Botones y pastillas (Pills): `rounded-full`.
   - Paneles, tarjetas y modales: `rounded-3xl` (24px) o `rounded-2xl` (16px).
-  - Marco hero de autoría: Arco superior editorial estilizado `rounded-t-[10rem] rounded-b-[2rem]` en escritorio y `rounded-t-[4rem] rounded-b-[1.5rem]` en móvil.
+  - Marco hero de autoría: Arco superior editorial estilizado `rounded-t-[10rem] rounded-b-[2rem]` en escritorio y `rounded-t-[2.5rem] rounded-b-xl` (`max-h-[190px]`) en móvil.
 - **Tratamiento cromático de fotografías:** Las imágenes editoriales integran una sutil capa de mezcla `mix-blend-soft-light` con gradiente tenue de `brand-primary/10` para armonizar la temperatura de color con la atmósfera lino del lienzo.
-- **Proporciones y contención de tarjetas compactas con peek affordance:**
-  - *Móvil (`< md`):* Ancho contenido relativo `w-[82vw] max-w-[320px] flex-shrink-0 snap-center` con espaciado `p-6`, bordes `rounded-3xl border border-brand-linen` y estructura `flex flex-col justify-between`. Esta geometría deja entrever el borde de la tarjeta consecutiva (~18vw visible), otorgando una pista visual inmediata (peek affordance) de continuidad horizontal y previniendo el scroll vertical desmedido en teléfonos.
-  - *Escritorio (`>= md`):* Cuadrícula estructurada de 3 columnas (`md:grid md:grid-cols-3 md:gap-6 md:w-auto md:max-w-none md:flex-shrink md:snap-align-none`) con alturas niveladas (`items-stretch`).
-  - *Gestión de desplazamiento limpio:* Utilidades CSS `.no-scrollbar` y `.scrollbar-hide` para ocultar la barra de desplazamiento nativa sin entorpecer el swipe táctil con inercia elástica.
+- **Proporciones y contención de tarjetas editoriales (Peek affordance y formato apaisado):**
+  - *Tarjetas alargadas apaisadas de audiencia (`TargetAudience.jsx`):* Formato horizontal amplio y esbelto `w-[85vw] sm:w-[580px] md:w-[680px] lg:w-[740px] shrink-0 snap-center` con altura compactada y esbelta `min-h-[300px] sm:min-h-[340px] md:min-h-[350px]` y espaciado interno asimétrico `py-4 px-5 sm:py-6 sm:px-7 md:py-6 md:px-8 flex flex-col justify-between`. Carrusel full-bleed de ancho completo de borde a borde `w-full overflow-x-auto no-scrollbar scrollbar-hide snap-x snap-mandatory touch-pan-y overscroll-x-contain flex items-stretch gap-6 sm:gap-8 px-6 sm:px-12 md:px-16 lg:px-20 py-3 sm:py-4` con `shrink-0` imperativo en cada tarjeta para neutralizar cualquier compresión o aplastamiento horizontal de Flexbox. Soporte explícito de `touch-action: pan-y` y `overscroll-behavior-x: contain` para impedir que el swipe horizontal intercepte el scroll vertical del usuario. Contenedor sticky con `h-[100dvh]` y despeje inferior `pb-20 md:pb-6` garantizando visibilidad completa ante el `StickyCTA` móvil flotante. Distribución interna balanceada en 2 columnas con cuadrícula calibrada `grid-cols-1 md:grid-cols-[1.1fr_1.4fr] gap-4 md:gap-7` y aprovechamiento de altura completa (`h-full flex flex-col justify-between`): columna izquierda (identidad y conversión) con badge circular de trazo fino (`w-8 h-8`, ícono `w-3.5 h-3.5`), micro-tag temático, título Display Serif (`text-lg sm:text-2xl font-semibold`), descripción contextual con ancho equilibrado (`max-w-[270px]`) y enlace "Sentirme mejor →" anclado al pie (`min-h-[44px]`); columna derecha (empatía somatosensorial) con tarjeta interior suave `bg-white/60 border border-brand-linen/80 rounded-xl p-2.5 sm:p-3.5 mb-2 sm:mb-2.5 shadow-[0_2px_12px_rgba(42,36,33,0.02)]` para la cita cognitiva y lista de síntomas con viñetas `CheckCircle2` (`w-3.5 h-3.5 text-brand-primary`, `space-y-1 sm:space-y-1.5 mt-auto`, `text-xs sm:text-[0.8rem]`). Acabado Soft Glass con diferenciación cromática tenue por perfil y sombra con relieve `shadow-[0_12px_36px_rgba(42,36,33,0.06)] hover:shadow-[0_16px_44px_rgba(160,82,85,0.1)] transition-shadow duration-300`.
+  - *Tarjetas compactas testimoniales (`Testimonials.jsx`):* En móvil (`< md`), ancho contenido relativo `w-[82vw] max-w-[320px] flex-shrink-0 snap-center` con espaciado `p-6`, bordes `rounded-3xl border border-brand-linen` y estructura vertical con peek affordance (~18vw visible). En escritorio (`>= md`), cuadrícula de 3 columnas (`md:grid md:grid-cols-3 md:gap-6`) con alturas niveladas.
+  - *Gestión de desplazamiento limpio:* Utilidades CSS `.no-scrollbar` y `.scrollbar-hide` para ocultar la barra de desplazamiento nativa sin entorpecer el swipe táctil o desplazamiento por trackpad con inercia elástica.
+  - *Despeje inferior adaptativo y convivencia con StickyCTA:* Para evitar que la barra flotante móvil (`StickyCTA.jsx`, fijada en `bottom-4`) cubra contenido interactivo, se aplican márgenes inferiores de contención en componentes clave: `pb-20 md:pb-6` en el escenario sticky de `TargetAudience.jsx`, `pb-24 md:pb-12` en el contenedor de `Schedule.jsx`, y `pb-24 md:pb-8` en el contenedor de `Footer.jsx`.
+  - *Reglas de no-partición tipográfica en rangos y canales:* Los rangos horarios no deben fracturarse en múltiples renglones, implementando `whitespace-nowrap text-sm sm:text-base font-semibold text-brand-text` combinado con cabeceras `flex-wrap gap-2`. Igualmente, el correo institucional en el pie de página debe utilizar `break-normal sm:break-all` sobre una columna con ancho mínimo garantizado desde pantallas de 360px.
 
 ---
 
 ## 4. Arquitectura de la SPA y especificación de componentes
 
-La experiencia de Balletherapy se articula como una Single Page Application (SPA) continua, estructurada en 9 componentes principales interconectados mediante desplazamiento suave por anclas:
+La experiencia de Balletherapie se articula como una Single Page Application (SPA) continua, estructurada en 9 componentes principales interconectados mediante desplazamiento suave por anclas:
 
 ```text
 [ Navbar Flotante Dinámico (Scroll-Aware) ]
@@ -171,24 +177,58 @@ La experiencia de Balletherapy se articula como una Single Page Application (SPA
 ### 4.1. Detalle técnico de cada componente
 
 #### 1. Barra de navegación (`src/layout/Navbar.jsx`)
-- **Control reactivo de scroll:** Escucha el evento `window.scrollY > 10` para conmutar de manera suave entre dos estados:
-  - *Estado superior transparente:* Contenedor ancho `max-w-6xl`, fondo limpio, logotipo con subtítulo descriptivo *"wellness studio"*. En móvil adopta una pastilla translúcida protegida (`bg-white/80 backdrop-blur-md border border-brand-linen/60 rounded-full`).
-  - *Estado comprimido Soft Glass:* Cápsula flotante centrada `max-w-4xl`, fondo reforzado `bg-[#FAF7F5]/92 backdrop-blur-md border border-[#EADFD9] shadow-[0_4px_20px_rgba(42,36,33,0.06)]` y bordes redondeados (`rounded-full`), garantizando contraste cromático óptimo y nitidez sobre cualquier fotografía o bloque textual.
+- **Patrón Smart Scroll direccional y doble estado visual:**
+  - Control de visibilidad mediante listener pasivo (`{ passive: true }`) y referencia `lastScrollY` (`useRef(0)`):
+    * En la cima de la página (`currentScrollY <= 40`): Barra siempre visible (`isVisible = true`).
+    * Al descender (`currentScrollY > lastScrollY && currentScrollY > 60`): La barra se oculta fluidamente hacia arriba (`-translate-y-28 opacity-0 pointer-events-none`).
+    * Al ascender (`currentScrollY < lastScrollY`): La barra reaparece inmediatamente (`translate-y-0 opacity-100 pointer-events-auto`).
+    * *Excepción obligatoria:* Con el menú móvil abierto (`isMobileMenuOpen === true`), la visibilidad permanece forzosamente en `true`.
+  - *Estado al tope (`scrollY <= 20` / `isScrolled = false`):* Barra 100% plana, transparente y libre de cápsula tanto en móvil como en escritorio (`w-full max-w-6xl mx-auto px-6 sm:px-8 py-5 sm:py-6 bg-transparent border-transparent shadow-none rounded-none backdrop-blur-none`). El wordmark "Balletherapie" en cursiva y el botón de menú hamburguesa (o enlaces de escritorio) descansan directamente sobre el lienzo, fusionándose de forma natural con el fondo del Hero sin encerrarse en ninguna cápsula.
+  - *Estado en desplazamiento (`scrollY > 20` / `isScrolled = true`):* Transición suave (`transition-all duration-300 ease-in-out`) a cápsula flotante Soft Glass centrada `max-w-4xl mx-auto mt-2 sm:mt-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#FAF7F5]/95 backdrop-blur-md border border-[#EADFD9] shadow-[0_4px_20px_rgba(42,36,33,0.06)]`.
+- **Logotipo institucional de autor:** Wordmark en cursiva editorial (*Playfair Display Italic*, `font-serif italic font-normal tracking-wide text-brand-text hover:text-brand-primary`) con micro-descriptor inferior en tipografía sans limpia y Sentence Case (*"Wellness studio"*, `font-sans not-italic text-[0.65rem] tracking-widest text-brand-muted`).
 - **Navegación de escritorio:** Enlaces a `#inicio`, `#metodo`, `#sobre-mi`, `#testimonios`, `#faq` y botón de conversión directa *"Agendar clase"* con halo lumínico en hover.
-- **Menú móvil interactivo:** Botón accesible de mínimo 44x44px con ícono de alternancia `Menu` / `X`. Despliega una cortina en pantalla completa con `backdrop-blur-xl`, enlaces de gran escala y autocierre tras pulsar una opción.
+- **Menú móvil interactivo:** Botón accesible de mínimo 44x44px con ícono de alternancia `Menu` / `X`. Despliega una cortina en pantalla completa con `backdrop-blur-xl`, enlaces de gran escala, bloqueo de scroll en el `body` (`document.body.style.overflow = 'hidden'`) y autocierre tras pulsar una opción.
 
 #### 2. Sección Hero (`src/sections/Hero.jsx`)
-- **Halos lumínicos de atmósfera:** Círculos difusos en lino (`bg-brand-linen/40 blur-[120px]`) y terracota tenue (`bg-brand-primary/5 blur-[100px]`).
-- **Jerarquía textual:** Badge institucional, titular H1 con remate en itálica terracota y subtítulo somatosensorial.
-- **Marco abovedado editorial:** Arco arquitectónico (`rounded-t-[10rem] rounded-b-[2rem]` en escritorio; `rounded-t-[4rem] rounded-b-[1.5rem]` en móvil) conteniendo `hero-bg.jpg` y tarjeta flotante Soft Glass *"Tu pausa en medio del ruido"*.
-- **Acciones primarias, microinteracciones y prueba social:** Botón primario *"Agendar clase de prueba"* hacia WhatsApp con desplazamiento interactivo de flecha (`group-hover:translate-x-1 duration-200`) y halo terracota (`hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)] duration-300`), botón secundario *"Conocer el método"* hacia `#metodo`, y microprueba social de modalidades: *"Sesiones matutinas en vivo • Vía Zoom • Atención somática personalizada"* (en estricto Sentence Case).
+- **Contenedor y atmósfera visual (Above the Fold optimizado y despeje de Navbar):** Posicionamiento no estático garantizado `relative w-full overflow-hidden pt-28 sm:pt-32 md:pt-36 pb-10 sm:pb-14 md:pb-20 flex flex-col justify-center min-h-[92vh] md:min-h-screen px-4 sm:px-6` para erradicar cualquier colisión o cercanía excesiva con el Navbar flotante en pantallas móviles, complementado con halos lumínicos difusos en lino (`bg-brand-linen/40 blur-[120px]`) y terracota tenue (`bg-brand-primary/5 blur-[100px]`).
+- **Jerarquía textual calibrada al primer pliegue:**
+  - *Kicker badge institucional:* Micro-etiqueta sutil diferenciada visualmente del Navbar sin sombras pesadas `inline-flex items-center justify-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-brand-linen/30 border border-brand-linen/60 text-brand-primary text-[0.68rem] sm:text-xs tracking-wide max-w-[90vw] sm:max-w-md mb-3 sm:mb-4`.
+  - *Titular H1 editorial:* Escala fluida adaptable `text-2xl sm:text-3xl md:text-5xl lg:text-[3.25rem] font-serif text-brand-text leading-tight sm:leading-tight mb-2 sm:mb-3` con remate en itálica terracota (*Balletherapie*).
+  - *Subtítulo somatosensorial:* Tipografía limpia en `text-xs sm:text-sm md:text-base text-brand-muted max-w-lg mx-auto md:mx-0 leading-relaxed mb-3 sm:mb-5`.
+- **Marco abovedado editorial y dimensiones responsivas:**
+  - En escritorio (`>= md`): Arco arquitectónico estilizado `rounded-t-[10rem] rounded-b-[2rem]` con altura `h-[520px] lg:h-[580px]` conteniendo `hero-bg.jpg` y tarjeta flotante Soft Glass *"Tu pausa en medio del ruido"*.
+  - En dispositivos móviles (`< md`): Marco compacto optimizado para mantener botones visibles en el primer pantallazo sin desbordamiento: `w-full max-w-[280px] sm:max-w-[340px] md:max-w-none mx-auto md:mx-0 aspect-[4/3] sm:aspect-[16/10] max-h-[190px] sm:max-h-[220px] rounded-t-[2.5rem] rounded-b-xl my-3` con microtarjeta flotante Soft Glass compactada (`text-[0.65rem] sm:text-xs py-1 px-2.5`).
+- **Acciones primarias, microinteracciones y prueba social:**
+  - Botón primario *"Agendar clase de prueba"* hacia WhatsApp con desplazamiento interactivo de flecha (`group-hover:translate-x-1 duration-200`), halo terracota (`hover:shadow-[0_4px_20px_rgba(160,82,85,0.25)] duration-300`), área táctil de `min-h-[44px]` y espaciado móvil equilibrado (`gap-2.5 sm:gap-3 mt-1 sm:mt-2`).
+  - Botón secundario *"Conocer el método"* hacia `#metodo`.
+  - Microprueba social de modalidades: *"Sesiones matutinas en vivo • Vía Zoom • Atención somática personalizada"* en `text-[0.65rem] sm:text-xs text-brand-muted mt-2 sm:mt-3` (en estricto Sentence Case).
 
 #### 3. Audiencia y autoidentificación (`src/sections/TargetAudience.jsx`)
-- **Layout híbrido responsivo:** Carrusel táctil horizontal en móvil (`< md`) con peek affordance (`flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide no-scrollbar pb-4 px-4 -mx-4` y tarjetas `w-[82vw] max-w-[320px] flex-shrink-0 snap-center rounded-3xl p-6 flex flex-col justify-between`), transformándose en cuadrícula rítmica de 3 columnas en escritorio (`>= md`, `md:grid md:grid-cols-3 md:gap-6`).
-- Presentación secuencial de los 3 arquetipos (*La profesional en burnout*, *La joven preventiva*, *La madre multitarea*).
-- Insignia superior compacta circular (`w-10 h-10 rounded-full bg-brand-linen/40 text-brand-primary`) con íconos temáticos de Lucide (`BatteryWarning`, `Smartphone`, `Clock`) en trazo fino (`strokeWidth={1.75}`).
-- Lista de síntomas compacta (`space-y-2`) con tipografía `text-xs sm:text-sm text-brand-muted` y señalizadores `CheckCircle2` (`w-4 h-4 text-brand-primary`).
-- Indicador visual interactivo de posición (dots/pastillas) en la parte inferior para móvil.
+- **Arquitectura de Scrollytelling Pinned en 3 fases (Patrón Diana Ledesma adaptado a Warm Editorial):**
+  - *Pista exterior extendida y optimizada:* Contenedor exterior con altura calculada y ágil de `h-[140vh]` en móvil (`< md`) y `h-[240vh]` en escritorio (`>= md`) con posicionamiento relativo (`relative w-full`), previniendo recorridos muertos y permitiendo que la usuaria avance con ligereza sin quedar "atrapada" en un pantallazo estático.
+  - *Escenario sticky en viewport y balance vertical móvil:* Contenedor fijo en pantalla con altura dinámica `sticky top-0 h-[100dvh] w-full overflow-hidden flex flex-col justify-center items-center py-3 sm:py-6 pb-20 md:pb-6`. La utilización de `100dvh` neutraliza por completo los saltos y redibujados bruscos causados por el colapso o despliegue de las barras de navegación en Safari iOS y Chrome Android. El despeje inferior `pb-20 md:pb-6` asegura que ni la pastilla de navegación inferior ni el botón "Sentirme mejor" queden ocluidos por el `StickyCTA` flotante. El encabezado (`w-full max-w-3xl mx-auto px-4 text-center mb-2 sm:mb-4 pointer-events-none relative z-20 flex-shrink-0`) mantiene al subtítulo montado en el DOM con desvanecimiento por opacidad para eliminar CLS. Ausencia estricta de clases de transición CSS en elementos interpolados por GPU. El carrusel de tarjetas incorpora `touch-pan-y` y `overscroll-x-contain` (`touch-action: pan-y; overscroll-behavior-x: contain;`) para blindar el desplazamiento vertical nativo contra bloqueos producidos por el deslizamiento horizontal.
+  - *Interpolaciones cinemáticas continuas GPU con `useTransform` (Calibración ágil 0.08 - 0.25):* Monitoreo de `scrollYProgress` (0.0 a 1.0) mediante `useScroll` de Framer Motion con transformaciones matemáticas continuas sin estados booleanos reactivos ni re-renderizados durante el scroll:
+    * `headerY = useTransform(scrollYProgress, [0.08, 0.25], ["18vh", "0vh"])`
+    * `subtitleOpacity = useTransform(scrollYProgress, [0.08, 0.18], [1, 0])`
+    * `cardsOpacity = useTransform(scrollYProgress, [0.14, 0.25], [0, 1])`
+    * `cardsY = useTransform(scrollYProgress, [0.14, 0.25], ["30px", "0px"])`
+    * `cardsPointerEvents = useTransform(scrollYProgress, (v) => v >= 0.22 ? "auto" : "none")`
+    * `backdropOpacity = useTransform(scrollYProgress, [0.08, 0.25], [1, 0])`
+- **Coreografía continua en 3 fases:**
+  - *Fase 1 (`progress < 0.08`):* Protagonismo exclusivo para el encabezado posicionado en el centro óptico vertical de la pantalla (`headerY: 18vh`). Compuesto por kicker badge *"¿Te sientes identificada?"*, titular display H2 *"El cansancio que no se quita durmiendo"* y subtítulo reflexivo visible (`opacity: 1`). Tarjetas y controles permanecen invisibles (`opacity: 0`) y bloqueados (`pointer-events: none`).
+  - *Fase 2 (`0.08 <= progress <= 0.25`):* Transición cinemática rápida y continua. Desvanecimiento suave del subtítulo (`opacity: 1 -> 0` entre `0.08` y `0.18`), ascenso del titular a su posición de cabecera directa (`y: 18vh -> 0vh` entre `0.08` y `0.25`) y emergencia vertical de las tarjetas (`y: 30px -> 0px`, `opacity: 0 -> 1` entre `0.14` y `0.25`).
+  - *Fase 3 (`progress > 0.25`):* Titular fijado como cabecera inmediata. Las tarjetas apaisadas full-bleed y la pastilla de controles alcanzan opacidad total e interactividad plena (`pointer-events: auto` a partir de `0.22`), permitiendo swipe horizontal fluido sin retención de scroll.
+- **Tarjetas alargadas apaisadas (Landscape Cards compactas con silueta esbelta y diferenciación cromática suave):**
+  - Eliminación total de la nomenclatura técnica "Arquetipo 01/02/03", reemplazada por badge circular con ícono Lucide (`BatteryWarning`, `Smartphone`, `Clock`), título en `Playfair Display` seminegrita (`text-lg sm:text-2xl text-brand-text font-semibold`) y micro-tags descriptivos de apoyo.
+  - Diferenciación cromática suave en cada tarjeta:
+    * *Tarjeta 1 (La profesional en burnout):* Fondo `bg-[#FAF3F2]/90 backdrop-blur-xl`, borde perimetral `border-[#E8D6D5]`, badge de ícono `bg-brand-primary/10 text-brand-primary` y micro-tag "Tensión y sobrecarga".
+    * *Tarjeta 2 (La joven preventiva):* Fondo `bg-[#F6F2EE]/90 backdrop-blur-xl`, borde perimetral `border-[#E5DDD6]`, badge de ícono `bg-[#685D57]/10 text-[#685D57]` y micro-tag "Sedentarismo digital".
+    * *Tarjeta 3 (La madre multitarea):* Fondo `bg-[#F7F2F3]/90 backdrop-blur-xl`, borde perimetral `border-[#E6D9DC]`, badge de ícono `bg-brand-secondary/10 text-brand-secondary` y micro-tag "Autoexigencia diaria".
+  - Geometría de presencia extendida con silueta rectangular compacta: `w-[85vw] sm:w-[580px] md:w-[680px] lg:w-[740px] shrink-0 snap-center`, altura compacta `min-h-[300px] sm:min-h-[340px] md:min-h-[350px]`, espaciado interno asimétrico `py-4 px-5 sm:py-6 sm:px-7 md:py-6 md:px-8 flex flex-col justify-between`, sombra con relieve `shadow-[0_12px_36px_rgba(42,36,33,0.06)] hover:shadow-[0_16px_44px_rgba(160,82,85,0.1)] transition-shadow duration-300` con cuadrícula interna `grid-cols-1 md:grid-cols-[1.1fr_1.4fr] gap-4 md:gap-7` y aprovechamiento de altura completa en ambas columnas (`h-full flex flex-col justify-between`).
+  - *Columna izquierda (Identidad y conversión):* Badge superior de ícono (`w-8 h-8`, ícono `w-3.5 h-3.5`) con micro-tag, título Display Serif (`text-lg sm:text-2xl font-semibold`), descripción contextual compacta (`max-w-[270px]`) y botón de llamada a la acción en la base ("Sentirme mejor →") con enlace blindado a WhatsApp (`target="_blank" rel="noopener noreferrer"`).
+  - *Columna derecha (Empatía somatosensorial):* Tarjeta interior suave (`bg-white/60 border border-brand-linen/80 rounded-xl p-2.5 sm:p-3.5 mb-2 sm:mb-2.5 shadow-[0_2px_12px_rgba(42,36,33,0.02)]`) con cita destacada en cursiva e ícono `Quote`, acompañada de lista de síntomas con viñetas `CheckCircle2` (`w-3.5 h-3.5 text-brand-primary`), espaciado compacto (`space-y-1 sm:space-y-1.5 mt-auto`) y tipografía en `Montserrat` (`text-brand-muted text-xs sm:text-[0.8rem]`).
+- **Pastilla de controles de navegación inferior:**
+  - Cápsula flotante centrada `bg-white/90 backdrop-blur-xl px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full border border-brand-linen shadow-md flex items-center gap-3` con botones tipo chevron accesibles de mínimo 44x44px (`active:scale-95`) vinculados a desplazamiento imperativo `scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' })`, sincronizados reactivamente con un listener de scroll pasivo (`addEventListener('scroll', ..., { passive: true })`) sobre `carouselRef.current` para actualizar los micro-indicadores reactivos (dots) según `scrollLeft`.
 
 #### 4. El método y pilares terapéuticos (`src/sections/Differentiators.jsx`)
 - Manifiesto editorial explicando la diferencia entre el barre somático restaurativo y el fitness punitivo tradicional.
@@ -206,11 +246,13 @@ La experiencia de Balletherapy se articula como una Single Page Application (SPA
 - Indicador visual interactivo de posición (dots/pastillas) para móvil.
 
 #### 7. Horarios, modalidad y reserva (`src/sections/Schedule.jsx`)
-- Cuadrícula con los bloques horarios oficiales en vivo:
-  - *Lunes a viernes:* `06:45 AM - 07:45 AM`, `08:00 AM - 09:00 AM`, `10:00 AM - 11:00 AM`.
-  - *Sábados:* `09:00 AM - 10:00 AM`, `10:00 AM - 11:00 AM`.
-- Tarjeta explicativa de la modalidad Zoom con énfasis en privacidad y presencia: *"Espacio seguro y confidencial: sesiones 100% en vivo para garantizar corrección postural en tiempo real y cuidar la privacidad de cada alumna"*, acompañada del icono `ShieldCheck`.
-- Tarjeta destacada de "Inversión flexible" en gradiente terracota ("Paquetes a tu medida o pago por clase") con botón directo a WhatsApp y microinteracción táctil.
+- Agenda dinámica y franjas orientativas coordinadas semanalmente de mujer a mujer vía WhatsApp:
+  - *Bloque matutino:* Rango horario blindado con contenedor no divisible `whitespace-nowrap text-sm sm:text-base font-semibold text-brand-text` (`07:00 AM - 11:00 AM`) de lunes a sábado, evitando fracturas antiestéticas en múltiples líneas. Cabecera adaptativa con `flex flex-wrap items-center justify-between gap-2` para reacomodo natural del badge sin comprimir el texto. Ideal para comenzar el día oxigenando el cuerpo, alineando la postura y calmando el sistema nervioso.
+  - *Bloque complementario / tardes bajo consulta:* Franjas vespertinas acordadas semanalmente de forma personalizada para adaptarse a agendas laborales dinámicas y compromisos cambiantes, con cabecera flexible `flex flex-wrap items-center justify-between gap-2`.
+- Tarjeta de contención informativa de modalidad Zoom y cupo limitado: Sesiones 100% en vivo con cupo limitado para garantizar corrección postural y atención somática cercana, en un espacio seguro y confidencial sin grabaciones invasivas. La cita y horario específico se agendan directamente por chat según disponibilidad de la semana.
+- Viñeta informativa de pie de panel con alineación superior precisa `flex items-start gap-2 text-left` y punto indicador `mt-1` sincronizado con la primera línea del texto.
+- Despeje inferior prioritario frente a `StickyCTA`: Contenedor de sección configurado con `pt-20 md:pt-24 pb-24 md:pb-12 px-6` para asegurar que la tarjeta de inversión y el botón de WhatsApp no queden cubiertos por la barra flotante móvil.
+- Tarjeta destacada de "Inversión flexible" en gradiente terracota ("Paquetes a tu medida o pago por clase", sin mensualidades forzosas ni ataduras) con botón directo a WhatsApp (`https://wa.me/525539134996?text=Hola!%20Me%20gustar%C3%ADa%20consultar%20los%20horarios%20disponibles%20para%20esta%20semana`), atributos `target="_blank" rel="noopener noreferrer"` y analítica GA4 `handleWhatsAppClick('Schedule')`.
 
 #### 8. Preguntas frecuentes (`src/sections/FAQ.jsx`)
 - Acordeón interactivo con 5 preguntas frecuentes gestionado con `AnimatePresence` de Framer Motion. La pregunta 5 aborda la política de inasistencia garantizando que las sesiones son 100% en vivo para proteger la privacidad de las alumnas y permitir reagendar en otros horarios matutinos de la misma semana con aviso previo.
@@ -218,7 +260,10 @@ La experiencia de Balletherapy se articula como una Single Page Application (SPA
 - Enlace complementario de contacto directo a WhatsApp para resolver inquietudes particulares.
 
 #### 9. Pie de página institucional y modal legal (`src/layout/Footer.jsx` y `src/components/ui/PrivacyModal.jsx`)
-- Enlaces de navegación rápida, canales de contacto oficiales y copyright institucional.
+- Logotipo de autor en cursiva editorial (*Playfair Display Italic*, `font-serif italic font-normal tracking-wide text-2xl sm:text-3xl text-brand-text !text-brand-base`) con punto final terracota.
+- Enlaces de navegación rápida y canales de contacto oficiales organizados en sub-cuadrícula `grid-cols-1 sm:grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2`, asegurando amplitud completa para la columna de contacto desde dispositivos de 360px de ancho.
+- Enlace del correo institucional configurado con `text-xs sm:text-sm text-brand-muted hover:text-brand-base transition-colors inline-block break-normal sm:break-all`, garantizando que `balletherapystudio@gmail.com` se lea en una sola línea continua sin particiones.
+- Despeje inferior para `StickyCTA`: Padding de contenedor `pt-14 pb-24 md:pb-8` asegurando que la barra de copyright y el botón de privacidad conserven holgura visual plena.
 - Disparador del modal de Aviso de Privacidad y derechos ARCO conforme a la normativa mexicana.
 
 #### 10. Barra flotante de conversión móvil diferida (`src/components/ui/StickyCTA.jsx`)
@@ -230,7 +275,7 @@ La experiencia de Balletherapy se articula como una Single Page Application (SPA
 
 ## 5. Estrategia de neuromarketing y psicología cognitiva aplicada
 
-| Principio cognitivo | Mecanismo psicológico | Aplicación concreta en Balletherapy |
+| Principio cognitivo | Mecanismo psicológico | Aplicación concreta en Balletherapie |
 | :--- | :--- | :--- |
 | **Gaze cueing y postura corporal** | La atención visual del usuario sigue de forma refleja la dirección de la mirada y postura de rostros humanos. | Las fotografías de Elizabeth Caballero en Hero y Sobre Mí orientan su mirada y línea corporal hacia los titulares y botones de reserva. |
 | **Reducción del dolor de pagar (Pain of paying)** | Las suscripciones obligatorias y ataduras mensuales activan el dolor cognitivo de la pérdida monetaria. | Se presenta como "Inversión flexible": clase de bienvenida gratuita, paquetes a tu medida o pago por clase individual ("Pagas solo lo que usas"). |
@@ -250,7 +295,7 @@ Para garantizar un posicionamiento óptimo en motores de búsqueda y previsualiz
 - **Etiqueta de idioma:** `<html lang="es">` obligatoria para indexación regional hispanohablante.
 - **Etiqueta canónica:**
   ```html
-  <link rel="canonical" href="https://carlosvlz89.github.io/balletherapy-web/" />
+  <link rel="canonical" href="https://balletherapie-dev.web.app/" />
   ```
 - **Favicons oficiales Warm Editorial:**
   ```html
@@ -264,9 +309,9 @@ Para garantizar un posicionamiento óptimo en motores de búsqueda y previsualiz
   - `public/apple-touch-icon.png`: Resolución optimizada de 180x180 px para dispositivos Apple / iOS.
 - **Meta tags primarios:**
   ```html
-  <title>Balletherapy | Santuario de bienestar, barre somático y regulación nerviosa</title>
+  <title>Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa</title>
   <meta name="description" content="Espacio de bienestar integral para la mujer contemporánea. Barre somático, journaling terapéutico y meditación aplicada para aliviar el burnout y cuidar tu espalda." />
-  <meta name="keywords" content="balletherapy, barre somático, journaling terapéutico, meditación, burnout, dolor de espalda, bienestar femenino, clases zoom" />
+  <meta name="keywords" content="balletherapie, barre somático, journaling terapéutico, meditación, burnout, dolor de espalda, bienestar femenino, clases zoom" />
   <meta name="author" content="Elizabeth Caballero" />
   ```
 
@@ -275,20 +320,20 @@ Las imágenes de previsualización deben respetar la proporción 1.91:1 con reso
 ```html
 <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://carlosvlz89.github.io/balletherapy-web/" />
-<meta property="og:title" content="Balletherapy | Santuario de bienestar, barre somático y regulación nerviosa" />
+<meta property="og:url" content="https://balletherapie-dev.web.app/" />
+<meta property="og:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta property="og:description" content="Burnout que pesa • Barre que restaura • Movimiento que serena. Clases virtuales 100% en vivo vía Zoom con atención somática personalizada." />
-<meta property="og:image" content="https://carlosvlz89.github.io/balletherapy-web/og-image.jpg" />
+<meta property="og:image" content="https://balletherapie-dev.web.app/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="es_MX" />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content="https://carlosvlz89.github.io/balletherapy-web/" />
-<meta name="twitter:title" content="Balletherapy | Santuario de bienestar, barre somático y regulación nerviosa" />
+<meta name="twitter:url" content="https://balletherapie-dev.web.app/" />
+<meta name="twitter:title" content="Balletherapie | Santuario de bienestar, barre somático y regulación nerviosa" />
 <meta name="twitter:description" content="Espacio donde el barre activa, el journaling libera y tu sistema nervioso se regula. Sesiones 100% en vivo vía Zoom con atención somática personalizada." />
-<meta name="twitter:image" content="https://carlosvlz89.github.io/balletherapy-web/og-image.jpg" />
+<meta name="twitter:image" content="https://balletherapie-dev.web.app/og-image.jpg" />
 ```
 
 ### 6.3. Marcado semántico estructurado JSON-LD (Schema.org)
@@ -299,12 +344,12 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
   "@graph": [
     {
       "@type": "HealthAndBeautyBusiness",
-      "@id": "https://carlosvlz89.github.io/balletherapy-web/#business",
-      "name": "Balletherapy Wellness Studio",
-      "alternateName": "Balletherapy",
-      "url": "https://carlosvlz89.github.io/balletherapy-web/",
-      "logo": "https://carlosvlz89.github.io/balletherapy-web/logo.png",
-      "image": "https://carlosvlz89.github.io/balletherapy-web/og-image.jpg",
+      "@id": "https://balletherapie-dev.web.app/#business",
+      "name": "Balletherapie Wellness Studio",
+      "alternateName": "Balletherapie",
+      "url": "https://balletherapie-dev.web.app/",
+      "logo": "https://balletherapie-dev.web.app/logo.png",
+      "image": "https://balletherapie-dev.web.app/og-image.jpg",
       "description": "Método integral de bienestar para mujeres: barre somático, journaling terapéutico y meditación para el alivio del estrés y el dolor de espalda.",
       "telephone": "+52-55-3913-4996",
       "email": "balletherapystudio@gmail.com",
@@ -315,34 +360,28 @@ Implementado en `index.html` dentro de una etiqueta `<script type="application/l
       },
       "founder": {
         "@type": "Person",
-        "@id": "https://carlosvlz89.github.io/balletherapy-web/#founder",
+        "@id": "https://balletherapie-dev.web.app/#founder",
         "name": "Elizabeth Caballero",
         "jobTitle": "Terapeuta de movimiento y bailarina",
-        "description": "Fundadora de Balletherapy, especialista en descompresión espinal y regulación del sistema nervioso."
+        "description": "Fundadora de Balletherapie, especialista en descompresión espinal y regulación del sistema nervioso."
       },
       "priceRange": "$$",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "06:45",
-          "closes": "11:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "09:00",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
           "closes": "11:00"
         }
       ]
     },
     {
       "@type": "Course",
-      "@id": "https://carlosvlz89.github.io/balletherapy-web/#course",
-      "name": "Clases de barre somático y journaling Balletherapy",
+      "@id": "https://balletherapie-dev.web.app/#course",
+      "name": "Clases de barre somático y journaling Balletherapie",
       "description": "Sesiones matutinas online 100% en vivo vía Zoom con atención somática personalizada y corrección postural en tiempo real.",
       "provider": {
-        "@id": "https://carlosvlz89.github.io/balletherapy-web/#business"
+        "@id": "https://balletherapie-dev.web.app/#business"
       }
     }
   ]
@@ -357,7 +396,7 @@ Ubicados en el directorio `/public/` para ser copiados íntegramente a `/dist/` 
 User-agent: *
 Allow: /
 
-Sitemap: https://carlosvlz89.github.io/balletherapy-web/sitemap.xml
+Sitemap: https://balletherapie-dev.web.app/sitemap.xml
 ```
 
 **Contenido de `public/sitemap.xml`:**
@@ -365,7 +404,7 @@ Sitemap: https://carlosvlz89.github.io/balletherapy-web/sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carlosvlz89.github.io/balletherapy-web/</loc>
+    <loc>https://balletherapie-dev.web.app/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -413,8 +452,8 @@ Para preservar la calidez humana y una experiencia conversacional sin fricción,
 | Componente | Mensaje humano natural | Mensaje codificado en URL |
 | :--- | :--- | :--- |
 | **Hero principal** | `Hola! Quiero agendar mi clase de prueba gratis` | `https://wa.me/525539134996?text=Hola!%20Quiero%20agendar%20mi%20clase%20de%20prueba%20gratis` |
-| **Horarios / Inversión** | `Hola! Me gustaría inscribirme a las clases matutinas` | `https://wa.me/525539134996?text=Hola!%20Me%20gustar%C3%ADa%20inscribirme%20a%20las%20clases%20matutinas` |
-| **FAQ (Dudas)** | `Hola! Tengo una duda sobre las clases de Balletherapy` | `https://wa.me/525539134996?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20clases%20de%20Balletherapy` |
+| **Horarios / Inversión** | `Hola! Me gustaría consultar los horarios disponibles para esta semana` | `https://wa.me/525539134996?text=Hola!%20Me%20gustar%C3%ADa%20consultar%20los%20horarios%20disponibles%20para%20esta%20semana` |
+| **FAQ (Dudas)** | `Hola! Tengo una duda sobre las clases de Balletherapie` | `https://wa.me/525539134996?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20clases%20de%20Balletherapie` |
 | **Navbar / Menú móvil** | `Hola! Me gustaría agendar mi clase de prueba` | `https://wa.me/525539134996?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20clase%20de%20prueba` |
 | **Sticky CTA móvil** | `Hola! Quiero agendar mi clase de prueba gratis` | `https://wa.me/525539134996?text=Hola!%20Quiero%20agendar%20mi%20clase%20de%20prueba%20gratis` |
 
@@ -469,7 +508,7 @@ Para garantizar un rendimiento estelar en dispositivos móviles bajo redes celul
   <img 
     src={heroImg} 
     alt="Elizabeth Caballero guiando sesión de barre somático" 
-    fetchpriority="high"
+    fetchPriority="high"
     loading="eager"
     decoding="sync"
     width="500"
@@ -490,7 +529,7 @@ Para garantizar un rendimiento estelar en dispositivos móviles bajo redes celul
 
 ### 10.1. Cumplimiento de la legislación mexicana de datos personales (LFPDPPP)
 El modal `src/components/ui/PrivacyModal.jsx` y la operación del estudio se rigen conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (México):
-- **Responsable del tratamiento:** Elizabeth Caballero, persona física titular de Balletherapy, con domicilio para oír y recibir notificaciones en Ciudad de México.
+- **Responsable del tratamiento:** Elizabeth Caballero, persona física titular de Balletherapie, con domicilio para oír y recibir notificaciones en Ciudad de México.
 - **Datos personales recabados en el flujo asistido:** Únicamente nombre de contacto, número de WhatsApp y dirección de correo electrónico. No se recaban datos financieros ni información sensible en la plataforma web.
 - **Finalidades del tratamiento:**
   1. Coordinación de citas, horarios y envío de enlaces individuales para sesiones de Zoom.
@@ -510,29 +549,27 @@ El modal `src/components/ui/PrivacyModal.jsx` y la operación del estudio se rig
 - El código compilado en `dist/` no debe contener claves privadas, tokens de API restringidos ni credenciales maestras.
 - La confirmación de transacciones y el envío de contraseñas de Zoom se gestionan fuera de banda (out-of-band) a través del canal privado de WhatsApp.
 
-### 10.4. Resiliencia de enrutamiento estático en GitHub Pages (`404.html`)
-GitHub Pages carece de reescritura nativa en el servidor para Single Page Applications. Para evitar errores 404 si el usuario accede o recarga una ruta secundaria (ej. `/balletherapy-web/reservar`), se estipula la inclusión de un archivo estático `public/404.html` que redirige el path a la raíz preservando los parámetros de búsqueda:
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Balletherapy</title>
-    <script>
-      var pathSegmentsToKeep = 1; // Para /balletherapy-web/
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
-  </head>
-  <body></body>
-</html>
+### 10.4. Resiliencia de enrutamiento estático en Firebase Hosting (`firebase.json`)
+La Single Page Application (SPA) se despliega sobre la infraestructura CDN global de Firebase Hosting. Para garantizar que cualquier acceso directo o recarga de ruta secundaria en el navegador (ej. `/reservar`, `/metodo`) no arroje errores 404, se configura la regla nativa de reescritura en `firebase.json`:
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
 ```
+Esto delega el enrutamiento y la resolución de recursos de forma limpia y transparente al cliente en React 19 sin requerir scripts paliativos de redirección.
 
 ---
 
@@ -545,21 +582,25 @@ Antes de fusionar cambios a la rama principal o ejecutar `npm run deploy`, debe 
 | **Ortotipografía RAE** | Inspección visual y estática de todos los textos de interfaz. | Estricto Sentence Case en encabezados, botones y badges; ausencia de `uppercase` indiscriminado. |
 | **Navbar flotante** | Desplazamiento vertical superando los 10px de scroll (`window.scrollY > 10`). | Transición fluida entre estado transparente y cápsula comprimida Soft Glass con borde lino. |
 | **Menú móvil interactivo** | Pulsación del botón hamburguesa en pantallas menores a 768px. | Apertura a pantalla completa con `backdrop-blur-xl`, bloqueo de scroll del body (`overflow: hidden`) y cierre al tocar un enlace. |
+| **Scrollytelling móvil** | Desplazamiento vertical en `TargetAudience` en iOS Safari y Android Chrome. | Pista ágil `h-[140vh]`, escenario `100dvh` sin saltos por barras del navegador, transición de titular completa en `0.25`, carrusel con `touch-pan-y` sin secuestro de scroll vertical y despeje `pb-20` frente a StickyCTA. |
+| **Layout responsivo de horarios** | Visualización de `Schedule` en anchos móviles desde 360px. | Rango `07:00 AM - 11:00 AM` en una sola línea (`whitespace-nowrap`), cabeceras con `flex-wrap` sin compresión de badges, viñeta alineada al primer renglón (`items-start mt-1`) y despeje `pb-24 md:pb-12`. |
+| **Tipografía institucional en pie** | Visualización de `Footer` en pantallas móviles desde 360px. | Correo `balletherapystudio@gmail.com` legible en una sola línea continua (`break-normal sm:break-all`), sub-cuadrícula con columna de contacto amplia y despeje inferior `pb-24 md:pb-8`. |
+| **Convivencia StickyCTA móvil** | Desplazamiento de la SPA superando 420px de scroll en viewport móvil. | La barra flotante inferior no ocluye tarjetas apaisadas, botones de reserva ni créditos de pie de página gracias a los paddings de contención (`pb-20`, `pb-24`). |
 | **Atribución WhatsApp** | Clic en botones de reserva de Hero, Horarios, FAQ y Navbar. | Apertura de enlace de WhatsApp con número internacional `+52 55 3913 4996` y parámetro de mensaje específico de la sección. |
 | **Seguridad de enlaces** | Inspección de todas las etiquetas `<a>` externas. | Presencia estricta de `target="_blank"` y `rel="noopener noreferrer"`. |
 | **Accesibilidad FAQ** | Navegación por teclado y prueba con lector de pantalla en el acordeón. | Botones con `aria-expanded` dinámico, paneles con `role="region"` y `aria-labelledby` correspondiente. |
 | **Accesibilidad modal** | Apertura y navegación por teclado en el modal de privacidad. | Foco atrapado en el modal (Focus Trap), cierre con tecla `Escape` y retorno de foco al disparador. |
-| **Rendimiento de imagen** | Inspección del elemento Hero en red móvil simulada. | Atributos `fetchpriority="high"`, `loading="eager"`, dimensiones explícitas y ausencia de CLS. |
+| **Rendimiento de imagen** | Inspección del elemento Hero en red móvil simulada. | Atributos `fetchPriority="high"`, `loading="eager"`, dimensiones explícitas y ausencia de CLS. |
 | **SEO y metadatos** | Inspección del código fuente HTML de la página compilada. | `<html lang="es">`, canonical URL, etiquetas Open Graph 1200x630px y script JSON-LD válidos. |
-| **Archivos estáticos** | Solicitud directa de `/robots.txt` y `/sitemap.xml`. | Archivos accesibles bajo la ruta base con referencias absolutas correctas. |
+| **Archivos estáticos** | Solicitud directa de `/robots.txt` y `/sitemap.xml`. | Archivos accesibles bajo la raíz del dominio con referencias absolutas correctas. |
 | **Compilación Vite** | Ejecución de `npm run build` en la terminal. | Generación limpia de la carpeta `dist/` con código de salida `0` y cero errores de TypeScript/Linter. |
-| **Ruta base GitHub Pages** | Carga del sitio en `http://localhost:5173/balletherapy-web/` o servidor remoto. | Resolución correcta de todos los activos estáticos sin errores 404 en scripts o imágenes. |
+| **Resolución raíz en Firebase Hosting** | Carga del sitio en `https://balletherapie-dev.web.app/` o servidor local de preview. | Resolución correcta de todos los activos estáticos en la raíz (`/`) sin errores 404 en scripts o imágenes. |
 
 ---
 
 ## 12. Roadmap y escalabilidad operativa
 
-La evolución tecnológica del ecosistema Balletherapy se estructura en tres fases progresivas:
+La evolución tecnológica del ecosistema Balletherapie se estructura en tres fases progresivas:
 
 ```text
 ┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐
